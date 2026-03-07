@@ -1,67 +1,73 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Destinations = () => {
-    const [filter, setFilter] = useState('All');
-    const categories = ['All', 'South India', 'North India', 'International', 'Beach', 'Hill Station'];
+  const [filter, setFilter] = useState('All');
+  const categories = ['All', 'South India', 'North India', 'International', 'Beach', 'Hill Station'];
 
-    const allDestinations = [
-        { name: "Andaman", tag: "Tropical Island", category: "Beach", description: "Experience crystal clear waters, white sandy beaches, and thrilling water sports at India's favorite tropical paradise.", image: "https://images.unsplash.com/photo-1589136777351-fdc9c9c85f95?q=80&w=1200" },
-        { name: "Kerala", tag: "God's Own Country", category: "South India", description: "Explore serene backwaters, lush tea plantations, and beautiful coastlines in the heart of South India.", image: "https://images.unsplash.com/photo-1602216056096-3c40cc0c9944?q=80&w=1200" },
-        { name: "Thailand", tag: "Amazing Thailand", category: "International", description: "Discover exotic culture, stunning temples, and world-class street food in the Land of Smiles.", image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1200" },
-        { name: "Kodaikanal", tag: "Princess of Hill Stations", category: "South India", description: "Relax amidst misty hills, peaceful lakes, and pine forests in the queen of South India.", image: "https://images.unsplash.com/photo-1626245051648-73599d10a248?q=80&w=1200" },
-        { name: "Manali", tag: "Snowy Peaks", category: "North India", description: "Breathtaking views of the Himalayas and adventurous activities await you in this popular hill station.", image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200" },
-        { name: "Singapore", tag: "The Lion City", category: "International", description: "A perfect blend of technology, nature, and modern luxury for a futuristic city experience.", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=1200" },
-        { name: "Dubai", tag: "City of Gold", category: "International", description: "Unparalleled luxury, desert safaris, and some of the world's most iconic buildings.", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200" },
-        { name: "Bali", tag: "Island of the Gods", category: "International", description: "Stunning beaches, volcanic mountains, and spiritual culture make Bali a must-visit destination.", image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1200" },
-        { name: "Kashmir", tag: "Heaven on Earth", category: "North India", description: "Experience the ultimate beauty of Dal Lake, snow-capped peaks, and warm Himalayan hospitality.", image: "https://images.unsplash.com/photo-1566833925222-3860bb632145?q=80&w=1200" }
-    ];
+  const allDestinations = [
+    { name: "Andaman", tag: "Tropical Island", category: "Beach", description: "Experience crystal clear waters, white sandy beaches, and thrilling water sports at India's favorite tropical paradise.", image: "https://images.unsplash.com/photo-1589136777351-fdc9c9c85f95?q=80&w=1200" },
+    { name: "Kerala", tag: "God's Own Country", category: "South India", description: "Explore serene backwaters, lush tea plantations, and beautiful coastlines in the heart of South India.", image: "https://images.unsplash.com/photo-1602216056096-3c40cc0c9944?q=80&w=1200" },
+    { name: "Thailand", tag: "Amazing Thailand", category: "International", description: "Discover exotic culture, stunning temples, and world-class street food in the Land of Smiles.", image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1200" },
+    { name: "Kodaikanal", tag: "Princess of Hill Stations", category: "South India", description: "Relax amidst misty hills, peaceful lakes, and pine forests in the queen of South India.", image: "https://images.unsplash.com/photo-1626245051648-73599d10a248?q=80&w=1200" },
+    { name: "Manali", tag: "Snowy Peaks", category: "North India", description: "Breathtaking views of the Himalayas and adventurous activities await you in this popular hill station.", image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200" },
+    { name: "Singapore", tag: "The Lion City", category: "International", description: "A perfect blend of technology, nature, and modern luxury for a futuristic city experience.", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=1200" },
+    { name: "Dubai", tag: "City of Gold", category: "International", description: "Unparalleled luxury, desert safaris, and some of the world's most iconic buildings.", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200" },
+    { name: "Bali", tag: "Island of the Gods", category: "International", description: "Stunning beaches, volcanic mountains, and spiritual culture make Bali a must-visit destination.", image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1200" },
+    { name: "Kashmir", tag: "Heaven on Earth", category: "North India", description: "Experience the ultimate beauty of Dal Lake, snow-capped peaks, and warm Himalayan hospitality.", image: "https://images.unsplash.com/photo-1566833925222-3860bb632145?q=80&w=1200" }
+  ];
 
-    const filteredDestinations = filter === 'All'
-        ? allDestinations
-        : allDestinations.filter(d => d.category === filter || d.tag.includes(filter));
+  const filteredDestinations = filter === 'All'
+    ? allDestinations
+    : allDestinations.filter(d => d.category === filter || d.tag.includes(filter));
 
-    return (
-        <div className="destinations-page">
-            <section className="page-hero">
-                <div className="container">
-                    <h1 data-aos="fade-up">Explore Our Destinations</h1>
-                    <p className="breadcrumb">Home / Destinations</p>
+  return (
+    <>
+      <Helmet>
+        <title>Top Travel Destinations | Andaman, Kerala, Thailand & more</title>
+        <meta name="description" content="Explore our top travel destinations from Tirunelveli. Specialized in Andaman, Kerala, Thailand, Dubai, and Singapore tour planning with expert guidance." />
+      </Helmet>
+      <div className="destinations-page">
+        <section className="page-hero">
+          <div className="container">
+            <h1 data-aos="fade-up">Explore Our Destinations</h1>
+            <p className="breadcrumb">Home / Destinations</p>
+          </div>
+        </section>
+
+        <div className="destinations-filter container pt-60">
+          <div className="filter-tabs" data-aos="fade-up">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                className={`filter-tab ${filter === cat ? 'active' : ''}`}
+                onClick={() => setFilter(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="destinations-list container section-padding">
+          <div className="grid grid-2">
+            {filteredDestinations.map((dest, index) => (
+              <div className="dest-mag-card" key={index} data-aos="fade-up">
+                <div className="dest-mag-img">
+                  <img src={dest.image} alt={dest.name} />
                 </div>
-            </section>
-
-            <div className="destinations-filter container pt-60">
-                <div className="filter-tabs" data-aos="fade-up">
-                    {categories.map(cat => (
-                        <button
-                            key={cat}
-                            className={`filter-tab ${filter === cat ? 'active' : ''}`}
-                            onClick={() => setFilter(cat)}
-                        >
-                            {cat}
-                        </button>
-                    ))}
+                <div className="dest-mag-overlay">
+                  <span className="dest-mag-tag">{dest.tag}</span>
+                  <h3 className="dest-mag-name">{dest.name}</h3>
+                  <p className="dest-mag-desc">{dest.description}</p>
+                  <button className="btn btn-outline-gold">View Packages &rarr;</button>
                 </div>
-            </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-            <div className="destinations-list container section-padding">
-                <div className="grid grid-2">
-                    {filteredDestinations.map((dest, index) => (
-                        <div className="dest-mag-card" key={index} data-aos="fade-up">
-                            <div className="dest-mag-img">
-                                <img src={dest.image} alt={dest.name} />
-                            </div>
-                            <div className="dest-mag-overlay">
-                                <span className="dest-mag-tag">{dest.tag}</span>
-                                <h3 className="dest-mag-name">{dest.name}</h3>
-                                <p className="dest-mag-desc">{dest.description}</p>
-                                <button className="btn btn-outline-gold">View Packages &rarr;</button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <style>{`
+        <style>{`
         .pt-60 { padding-top: 60px; }
         
         .dest-mag-card {
@@ -161,8 +167,9 @@ const Destinations = () => {
            .dest-mag-overlay { padding: 30px; }
         }
       `}</style>
-        </div>
-    );
+      </div>
+    </>
+  );
 };
 
 export default Destinations;

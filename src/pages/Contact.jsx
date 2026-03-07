@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -39,159 +40,164 @@ const Contact = () => {
   ];
 
   return (
-    <div className="contact-page">
-      <section className="page-hero">
-        <div className="container">
-          <h1 data-aos="fade-up">Get In Touch With Us</h1>
-          <p className="breadcrumb">Home / Contact Us</p>
-        </div>
-      </section>
-
-      <section className="contact-section container section-padding">
-        <div className="grid grid-2 items-center">
-          {/* Left Column - Contact Info */}
-          <div className="contact-info-col" data-aos="fade-right">
-            <h2 className="section-title text-left">We're Here to Help You Plan Your Perfect Trip</h2>
-            <p className="about-text">Have questions about our packages or need a custom itinerary? Our team of experts is ready to assist you in making your travel dreams come true.</p>
-
-            <div className="contact-info-grid">
-              {contactOptions.map((opt, i) => (
-                <div className="contact-info-item" key={i}>
-                  <div className="contact-icon-box">
-                    <i className={`fa-solid ${opt.icon}`}></i>
-                  </div>
-                  <div className="contact-text-box">
-                    <h3>{opt.title}</h3>
-                    <p>{opt.content}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="whatsapp-grid">
-              <a href="https://wa.me/917339004469" className="btn btn-emerald w-full" target="_blank" rel="noopener noreferrer">Chat with Agent 1 <i className="fa-brands fa-whatsapp"></i></a>
-              <a href="https://wa.me/918122694469" className="btn btn-emerald w-full" target="_blank" rel="noopener noreferrer">Chat with Agent 2 <i className="fa-brands fa-whatsapp"></i></a>
-            </div>
+    <>
+      <Helmet>
+        <title>Contact Us | Renting and Group Tours | Perfect Planners Tirunelveli</title>
+        <meta name="description" content="Get in touch with Perfect Planners for custom tour planning. Visit our Tirunelveli office or contact us for Andaman, Kerala, and International tour bookings." />
+      </Helmet>
+      <div className="contact-page">
+        <section className="page-hero">
+          <div className="container">
+            <h1 data-aos="fade-up">Get In Touch With Us</h1>
+            <p className="breadcrumb">Home / Contact Us</p>
           </div>
+        </section>
 
-          {/* Right Column - Contact Form */}
-          <div className="contact-form-col" data-aos="fade-left">
-            <div className="glass-card contact-form-card">
-              <h3>Plan Your Trip Now</h3>
-              <p>Fill out the form below and we'll get back to you with a personalized itinerary!</p>
+        <section className="contact-section container section-padding">
+          <div className="grid grid-2 items-center">
+            {/* Left Column - Contact Info */}
+            <div className="contact-info-col" data-aos="fade-right">
+              <h2 className="section-title text-left">We're Here to Help You Plan Your Perfect Trip</h2>
+              <p className="about-text">Have questions about our packages or need a custom itinerary? Our team of experts is ready to assist you in making your travel dreams come true.</p>
 
-              {formStatus === 'success' ? (
-                <div className="success-msg" data-aos="zoom-in">
-                  <i className="fa-solid fa-circle-check"></i>
-                  <p>WhatsApp Redirected! We'll receive your message shortly.</p>
-                </div>
-              ) : (
-                <form className="contact-form" onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Full Name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                    />
+              <div className="contact-info-grid">
+                {contactOptions.map((opt, i) => (
+                  <div className="contact-info-item" key={i}>
+                    <div className="contact-icon-box">
+                      <i className={`fa-solid ${opt.icon}`}></i>
+                    </div>
+                    <div className="contact-text-box">
+                      <h3>{opt.title}</h3>
+                      <p>{opt.content}</p>
+                    </div>
                   </div>
-                  <div className="form-row">
+                ))}
+              </div>
+
+              <div className="whatsapp-grid">
+                <a href="https://wa.me/917339004469" className="btn btn-emerald w-full" target="_blank" rel="noopener noreferrer">Chat with Agent 1 <i className="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/918122694469" className="btn btn-emerald w-full" target="_blank" rel="noopener noreferrer">Chat with Agent 2 <i className="fa-brands fa-whatsapp"></i></a>
+              </div>
+            </div>
+
+            {/* Right Column - Contact Form */}
+            <div className="contact-form-col" data-aos="fade-left">
+              <div className="glass-card contact-form-card">
+                <h3>Plan Your Trip Now</h3>
+                <p>Fill out the form below and we'll get back to you with a personalized itinerary!</p>
+
+                {formStatus === 'success' ? (
+                  <div className="success-msg" data-aos="zoom-in">
+                    <i className="fa-solid fa-circle-check"></i>
+                    <p>WhatsApp Redirected! We'll receive your message shortly.</p>
+                  </div>
+                ) : (
+                  <form className="contact-form" onSubmit={handleSubmit}>
                     <div className="form-group">
                       <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone Number"
-                        value={formData.phone}
+                        type="text"
+                        name="name"
+                        placeholder="Full Name"
+                        value={formData.name}
                         onChange={handleInputChange}
                         required
                       />
                     </div>
-                    <div className="form-group">
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email Address"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <select name="package" value={formData.package} onChange={handleInputChange}>
-                      <option>Package Interested In</option>
-                      <option>Andaman Islands</option>
-                      <option>Kerala Backwaters</option>
-                      <option>Thailand Tour</option>
-                      <option>Kodaikanal Weekend</option>
-                      <option>Custom Package</option>
-                    </select>
-                  </div>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <input
-                        type="date"
-                        name="date"
-                        placeholder="Travel Date"
-                        value={formData.date}
-                        onChange={handleInputChange}
-                      />
+                    <div className="form-row">
+                      <div className="form-group">
+                        <input
+                          type="tel"
+                          name="phone"
+                          placeholder="Phone Number"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Email Address"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                        />
+                      </div>
                     </div>
                     <div className="form-group">
-                      <input
-                        type="number"
-                        name="adults"
-                        placeholder="No. of Adults"
-                        min="1"
-                        value={formData.adults}
-                        onChange={handleInputChange}
-                      />
+                      <select name="package" value={formData.package} onChange={handleInputChange}>
+                        <option>Package Interested In</option>
+                        <option>Andaman Islands</option>
+                        <option>Kerala Backwaters</option>
+                        <option>Thailand Tour</option>
+                        <option>Kodaikanal Weekend</option>
+                        <option>Custom Package</option>
+                      </select>
+                    </div>
+                    <div className="form-row">
+                      <div className="form-group">
+                        <input
+                          type="date"
+                          name="date"
+                          placeholder="Travel Date"
+                          value={formData.date}
+                          onChange={handleInputChange}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <input
+                          type="number"
+                          name="adults"
+                          placeholder="No. of Adults"
+                          min="1"
+                          value={formData.adults}
+                          onChange={handleInputChange}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <input
+                          type="number"
+                          name="children"
+                          placeholder="No. of Children"
+                          min="0"
+                          value={formData.children}
+                          onChange={handleInputChange}
+                        />
+                      </div>
                     </div>
                     <div className="form-group">
-                      <input
-                        type="number"
-                        name="children"
-                        placeholder="No. of Children"
-                        min="0"
-                        value={formData.children}
+                      <textarea
+                        name="message"
+                        placeholder="Special Requirements / Message"
+                        rows="4"
+                        value={formData.message}
                         onChange={handleInputChange}
-                      />
+                      ></textarea>
                     </div>
-                  </div>
-                  <div className="form-group">
-                    <textarea
-                      name="message"
-                      placeholder="Special Requirements / Message"
-                      rows="4"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                    ></textarea>
-                  </div>
-                  <button type="submit" className="btn btn-primary w-full shadow-gold">Send WhatsApp Enquiry 📲</button>
-                </form>
-              )}
+                    <button type="submit" className="btn btn-primary w-full shadow-gold">Send WhatsApp Enquiry 📲</button>
+                  </form>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Map Section */}
-      <section className="map-section section-padding-0">
-        <iframe
-          title="Tirunelveli Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126485.45494918737!2d77.67107775571129!3d8.713913076136701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04115842813639%3A0x197478d1f27fa88d!2sTirunelveli%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1709772844893!5m2!1sen!2sin"
-          width="100%"
-          height="500"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </section>
+        {/* Map Section */}
+        <section className="map-section section-padding-0">
+          <iframe
+            title="Tirunelveli Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126485.45494918737!2d77.67107775571129!3d8.713913076136701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04115842813639%3A0x197478d1f27fa88d!2sTirunelveli%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1709772844893!5m2!1sen!2sin"
+            width="100%"
+            height="500"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </section>
 
-      <style>{`
+        <style>{`
         .contact-info-grid {
           margin-top: 40px;
           display: flex;
@@ -320,7 +326,8 @@ const Contact = () => {
           padding-bottom: 0;
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 };
 

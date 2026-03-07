@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
   const services = [
@@ -37,43 +38,48 @@ const Services = () => {
   ];
 
   return (
-    <div className="services-page">
-      <section className="page-hero">
-        <div className="container">
-          <h1 data-aos="fade-up">Our Premium Services</h1>
-          <p className="breadcrumb">Home / Services</p>
-        </div>
-      </section>
-
-      <div className="services-container container section-padding">
-        {services.map((service, index) => (
-          <div
-            key={service.id}
-            className={`service-card ${index % 2 !== 0 ? 'row-reverse' : ''}`}
-            data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
-          >
-            <div className="service-content">
-              <div className="service-header-row">
-                <span className="service-icon-bg">{service.icon}</span>
-                <h2 className="service-name">{service.name}</h2>
-              </div>
-              <p className="service-desc">{service.description}</p>
-              <ul className="service-list">
-                {service.list.map((item, i) => (
-                  <li key={i}><i className="fa-solid fa-circle-check"></i> {item}</li>
-                ))}
-              </ul>
-              <button className="btn btn-navy mt-40">Enquire Now</button>
-            </div>
-            <div className="service-image-box">
-              <img src={service.image} alt={service.name} />
-              <div className="service-image-overlay"></div>
-            </div>
+    <>
+      <Helmet>
+        <title>Our Services | Airticket, Money Exchange & Attestation | Perfect Planners</title>
+        <meta name="description" content="Beyond tours, we offer air ticket booking, money exchange, and certificate attestation services in Tirunelveli. Your one-stop shop for all international travel needs." />
+      </Helmet>
+      <div className="services-page">
+        <section className="page-hero">
+          <div className="container">
+            <h1 data-aos="fade-up">Our Premium Services</h1>
+            <p className="breadcrumb">Home / Services</p>
           </div>
-        ))}
-      </div>
+        </section>
 
-      <style>{`
+        <div className="services-container container section-padding">
+          {services.map((service, index) => (
+            <div
+              key={service.id}
+              className={`service-card ${index % 2 !== 0 ? 'row-reverse' : ''}`}
+              data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
+            >
+              <div className="service-content">
+                <div className="service-header-row">
+                  <span className="service-icon-bg">{service.icon}</span>
+                  <h2 className="service-name">{service.name}</h2>
+                </div>
+                <p className="service-desc">{service.description}</p>
+                <ul className="service-list">
+                  {service.list.map((item, i) => (
+                    <li key={i}><i className="fa-solid fa-circle-check"></i> {item}</li>
+                  ))}
+                </ul>
+                <button className="btn btn-navy mt-40">Enquire Now</button>
+              </div>
+              <div className="service-image-box">
+                <img src={service.image} alt={service.name} />
+                <div className="service-image-overlay"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <style>{`
         .page-hero {
           height: 350px;
           background: linear-gradient(rgba(0,53,128,0.7), rgba(0,53,128,0.7)), url('/images/packages/hero_bg.png');
@@ -210,7 +216,8 @@ const Services = () => {
           }
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 };
 

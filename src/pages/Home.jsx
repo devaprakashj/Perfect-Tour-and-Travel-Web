@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -105,263 +106,269 @@ const Home = () => {
   ];
 
   return (
-    <div className="home-page">
-      {/* 1. Hero Banner Section */}
-      <section className="hero">
-        <div className="hero-slides">
-          {heroImages.map((img, index) => (
-            <div
-              key={index}
-              className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
-              style={{ backgroundImage: `url(${img})` }}
-            ></div>
-          ))}
-        </div>
-        <div className="hero-overlay"></div>
-        <div className="container hero-content">
-          <span className="hero-label" data-aos="fade-down">✈️ Your Trusted Travel Partner Since Day One</span>
-          <h1 className="hero-title" data-aos="fade-up" data-aos-delay="200">
-            Explore the World with <span>Perfect Planners</span>
-          </h1>
-          <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
-            Affordable Domestic & International Tour Packages from Tirunelveli
-          </p>
-          <div className="hero-btns" data-aos="fade-up" data-aos-delay="600">
-            <NavLink to="/packages" className="btn btn-primary">🗺️ Explore Packages</NavLink>
-            <NavLink to="/contact" className="btn btn-outline">📞 Book Now</NavLink>
+    <>
+      <Helmet>
+        <title>Perfect Planners Tours & Travels | Best Travel Agency in Tirunelveli</title>
+        <meta name="description" content="Book affordable domestic and international tour packages from Tirunelveli. Specialized in Andaman, Kerala, Thailand, and Dubai tours with Perfect Planners." />
+        <link rel="canonical" href="https://perfectplannerstours.com/" />
+      </Helmet>
+      <div className="home-page">
+        {/* 1. Hero Banner Section */}
+        <section className="hero">
+          <div className="hero-slides">
+            {heroImages.map((img, index) => (
+              <div
+                key={index}
+                className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+                style={{ backgroundImage: `url(${img})` }}
+              ></div>
+            ))}
           </div>
-          <div className="hero-stats" data-aos="fade-up" data-aos-delay="800">
-            <div className="stat-badge"><span>500+</span> Happy Customers</div>
-            <div className="stat-badge"><span>50+</span> Destinations</div>
-            <div className="stat-badge"><span>10+</span> Years Experience</div>
+          <div className="hero-overlay"></div>
+          <div className="container hero-content">
+            <span className="hero-label" data-aos="fade-down">✈️ Your Trusted Travel Partner Since Day One</span>
+            <h1 className="hero-title" data-aos="fade-up" data-aos-delay="200">
+              Explore the World with <span>Perfect Planners</span>
+            </h1>
+            <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
+              Affordable Domestic & International Tour Packages from Tirunelveli
+            </p>
+            <div className="hero-btns" data-aos="fade-up" data-aos-delay="600">
+              <NavLink to="/packages" className="btn btn-primary">🗺️ Explore Packages</NavLink>
+              <NavLink to="/contact" className="btn btn-outline">📞 Book Now</NavLink>
+            </div>
+            <div className="hero-stats" data-aos="fade-up" data-aos-delay="800">
+              <div className="stat-badge"><span>500+</span> Happy Customers</div>
+              <div className="stat-badge"><span>50+</span> Destinations</div>
+              <div className="stat-badge"><span>10+</span> Years Experience</div>
+            </div>
           </div>
-        </div>
 
-        {/* 2. Quick Enquiry Search Bar */}
-        <div className="search-bar-container" data-aos="zoom-in" data-aos-delay="1000">
-          <div className="glass-card search-card">
-            <div className="search-field">
-              <label><i className="fa-solid fa-earth-americas"></i> Destination</label>
-              <select
-                name="destination"
-                value={enquiry.destination}
-                onChange={handleEnquiryChange}
-              >
-                <option value="">Where to go?</option>
-                <option value="Andaman">Andaman</option>
-                <option value="Kerala">Kerala</option>
-                <option value="Thailand">Thailand</option>
-                <option value="Europe">Europe</option>
-                <option value="Dubai">Dubai</option>
-                <option value="Manali">Manali</option>
-                <option value="Kodaikanal">Kodaikanal</option>
-              </select>
-            </div>
-            <div className="search-field">
-              <label><i className="fa-solid fa-calendar-days"></i> Travel Date</label>
-              <input
-                type="date"
-                name="date"
-                value={enquiry.date}
-                onChange={handleEnquiryChange}
-              />
-            </div>
-            <div className="search-field">
-              <label><i className="fa-solid fa-users"></i> Travelers</label>
-              <input
-                type="number"
-                name="travelers"
-                min="1"
-                value={enquiry.travelers}
-                onChange={handleEnquiryChange}
-                placeholder="1"
-              />
-            </div>
-            <button
-              className="btn btn-navy search-btn"
-              onClick={handleWhatsAppEnquiry}
-            >
-              Plan My Trip Now
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Featured Tour Packages Section */}
-      <section className="section-padding container">
-        <div className="section-header" data-aos="fade-up">
-          <h2 className="section-title">🌟 Our Featured Packages</h2>
-          <p className="section-subtitle">Handpicked tours for every traveler and every budget</p>
-        </div>
-        <div className="grid grid-4">
-          {featuredPackages.map((pkg) => (
-            <div className="package-card" key={pkg.id} data-aos="fade-up" data-aos-delay={pkg.delay}>
-              <div className="pkg-img img-zoom">
-                <img src={pkg.image} alt={pkg.title} />
-                <span className="pkg-badge">{pkg.badge}</span>
+          {/* 2. Quick Enquiry Search Bar */}
+          <div className="search-bar-container" data-aos="zoom-in" data-aos-delay="1000">
+            <div className="glass-card search-card">
+              <div className="search-field">
+                <label><i className="fa-solid fa-earth-americas"></i> Destination</label>
+                <select
+                  name="destination"
+                  value={enquiry.destination}
+                  onChange={handleEnquiryChange}
+                >
+                  <option value="">Where to go?</option>
+                  <option value="Andaman">Andaman</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Thailand">Thailand</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Dubai">Dubai</option>
+                  <option value="Manali">Manali</option>
+                  <option value="Kodaikanal">Kodaikanal</option>
+                </select>
               </div>
-              <div className="pkg-content">
-                <h3 className="pkg-title">{pkg.title}</h3>
-                <div className="pkg-info-row">
-                  <span><i className="fa-solid fa-clock"></i> {pkg.duration}</span>
-                  <span><i className="fa-solid fa-user-group"></i> {pkg.capacity}</span>
+              <div className="search-field">
+                <label><i className="fa-solid fa-calendar-days"></i> Travel Date</label>
+                <input
+                  type="date"
+                  name="date"
+                  value={enquiry.date}
+                  onChange={handleEnquiryChange}
+                />
+              </div>
+              <div className="search-field">
+                <label><i className="fa-solid fa-users"></i> Travelers</label>
+                <input
+                  type="number"
+                  name="travelers"
+                  min="1"
+                  value={enquiry.travelers}
+                  onChange={handleEnquiryChange}
+                  placeholder="1"
+                />
+              </div>
+              <button
+                className="btn btn-navy search-btn"
+                onClick={handleWhatsAppEnquiry}
+              >
+                Plan My Trip Now
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. Featured Tour Packages Section */}
+        <section className="section-padding container">
+          <div className="section-header" data-aos="fade-up">
+            <h2 className="section-title">🌟 Our Featured Packages</h2>
+            <p className="section-subtitle">Handpicked tours for every traveler and every budget</p>
+          </div>
+          <div className="grid grid-4">
+            {featuredPackages.map((pkg) => (
+              <div className="package-card" key={pkg.id} data-aos="fade-up" data-aos-delay={pkg.delay}>
+                <div className="pkg-img img-zoom">
+                  <img src={pkg.image} alt={pkg.title} />
+                  <span className="pkg-badge">{pkg.badge}</span>
                 </div>
-                <p className="pkg-highlights">{pkg.highlights}</p>
-                <div className="pkg-footer">
-                  <div className="pkg-price-row">
-                    <div className="pkg-price">
-                      <span className="price-label">Starts from</span>
-                      <span className="price-val">{pkg.price}</span>
+                <div className="pkg-content">
+                  <h3 className="pkg-title">{pkg.title}</h3>
+                  <div className="pkg-info-row">
+                    <span><i className="fa-solid fa-clock"></i> {pkg.duration}</span>
+                    <span><i className="fa-solid fa-user-group"></i> {pkg.capacity}</span>
+                  </div>
+                  <p className="pkg-highlights">{pkg.highlights}</p>
+                  <div className="pkg-footer">
+                    <div className="pkg-price-row">
+                      <div className="pkg-price">
+                        <span className="price-label">Starts from</span>
+                        <span className="price-val">{pkg.price}</span>
+                      </div>
+                    </div>
+                    <div className="pkg-btns">
+                      <NavLink to="/packages" className="btn btn-outline-navy btn-sm">Details</NavLink>
+                      <NavLink to="/contact" className="btn btn-primary btn-sm">Enquire Now</NavLink>
                     </div>
                   </div>
-                  <div className="pkg-btns">
-                    <NavLink to="/packages" className="btn btn-outline-navy btn-sm">Details</NavLink>
-                    <NavLink to="/contact" className="btn btn-primary btn-sm">Enquire Now</NavLink>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-60">
+            <NavLink to="/packages" className="btn btn-navy">View All Packages <i className="fa-solid fa-arrow-right"></i></NavLink>
+          </div>
+        </section>
+
+        {/* 4. Why Choose Us Section */}
+        <section className="why-choose section-padding bg-white">
+          <div className="container">
+            <div className="section-header" data-aos="fade-up">
+              <h2 className="section-title">Why Travelers Trust Perfect Planners</h2>
+              <p className="section-subtitle">Experience matters when you're exploring the unknown</p>
+            </div>
+            <div className="grid grid-3">
+              <div className="feature-box" data-aos="fade-right">
+                <div className="feature-icon">✈️</div>
+                <h3>Best Price Guarantee</h3>
+                <p>Lowest prices with no hidden charges. We offer the best value for your money.</p>
+              </div>
+              <div className="feature-box" data-aos="fade-up">
+                <div className="feature-icon">🛡️</div>
+                <h3>100% Safe & Secure</h3>
+                <p>Verified hotels, transport, and expert guides to ensure your safety throughout.</p>
+              </div>
+              <div className="feature-box" data-aos="fade-left">
+                <div className="feature-icon">🌍</div>
+                <h3>Domestic & International</h3>
+                <p>From local hidden gems to global wonders, we cover it all from Tirunelveli.</p>
+              </div>
+              <div className="feature-box" data-aos="fade-right" data-aos-delay="200">
+                <div className="feature-icon">💳</div>
+                <h3>Easy EMI Options</h3>
+                <p>Don't let budget hold you back. Book now and pay in easy installments.</p>
+              </div>
+              <div className="feature-box" data-aos="fade-up" data-aos-delay="200">
+                <div className="feature-icon">📞</div>
+                <h3>24/7 Customer Support</h3>
+                <p>Always here when you need us. Round-the-clock assistance for peace of mind.</p>
+              </div>
+              <div className="feature-box" data-aos="fade-left" data-aos-delay="200">
+                <div className="feature-icon">🏅</div>
+                <h3>Expert Travel Planners</h3>
+                <p>Experienced team from Tirunelveli with deep knowledge of destinations.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Popular Destinations Section */}
+        <section className="section-padding container">
+          <div className="section-header" data-aos="fade-up">
+            <h2 className="section-title">🗺️ Popular Destinations</h2>
+            <p className="section-subtitle">Explore our most loved vacation spots across the globe</p>
+          </div>
+          <div className="destinations-grid">
+            {popularDestinations.map((dest, index) => (
+              <div className={`dest-card dest-card-${index}`} key={index} data-aos="zoom-in" data-aos-delay={index * 100}>
+                <img src={dest.image} alt={dest.name} />
+                <div className="dest-overlay">
+                  <h3>{dest.name}</h3>
+                  <p>{dest.tag}</p>
+                  <NavLink to="/packages" className="explore-link">Explore <i className="fa-solid fa-arrow-right"></i></NavLink>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 6. How It Works Section */}
+        <section className="section-padding bg-sky pos-relative">
+          <div className="container">
+            <div className="section-header" data-aos="fade-up">
+              <h2 className="section-title">How It Works</h2>
+              <p className="section-subtitle">Your dream vacation is just 4 simple steps away</p>
+            </div>
+            <div className="steps-container">
+              <div className="step" data-aos="fade-up" data-aos-delay="100">
+                <div className="step-num">01</div>
+                <div className="step-icon">🔍</div>
+                <h3>Choose Your Destination</h3>
+                <p>Browse through our domestic and international packages.</p>
+              </div>
+              <div className="step" data-aos="fade-up" data-aos-delay="200">
+                <div className="step-num">02</div>
+                <div className="step-icon">📋</div>
+                <h3>Customize Your Package</h3>
+                <p>Talk to our experts to tailor your trip to your needs.</p>
+              </div>
+              <div className="step" data-aos="fade-up" data-aos-delay="300">
+                <div className="step-num">03</div>
+                <div className="step-icon">💰</div>
+                <h3>Book & Pay Securely</h3>
+                <p>Confirm your booking with easy and secure payment options.</p>
+              </div>
+              <div className="step" data-aos="fade-up" data-aos-delay="400">
+                <div className="step-num">04</div>
+                <div className="step-icon">✈️</div>
+                <h3>Enjoy Your Holiday</h3>
+                <p>Pack your bags and create memories that last forever!</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 7. Testimonials Section */}
+        <section className="section-padding container">
+          <div className="section-header" data-aos="fade-up">
+            <h2 className="section-title">What Our Travelers Say ❤️</h2>
+            <p className="section-subtitle">Stories of happiness from across the world</p>
+          </div>
+          <div className="testimonials-track">
+            {[1, 2, 3].map((i) => (
+              <div className="review-card glass-card" key={i} data-aos="fade-up">
+                <div className="review-stars">⭐⭐⭐⭐⭐</div>
+                <p className="review-text">"Our trip to Andaman with Perfect Planners was absolutely flawless. From the airport pickup to the hotel stay, everything was perfectly organized. Highly recommended!"</p>
+                <div className="review-user">
+                  <div className="user-avatar"><i className="fa-solid fa-user-astronaut"></i></div>
+                  <div className="user-info">
+                    <h4>Rahul S.</h4>
+                    <span>Tirunelveli, TN</span>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-        <div className="text-center mt-60">
-          <NavLink to="/packages" className="btn btn-navy">View All Packages <i className="fa-solid fa-arrow-right"></i></NavLink>
-        </div>
-      </section>
-
-      {/* 4. Why Choose Us Section */}
-      <section className="why-choose section-padding bg-white">
-        <div className="container">
-          <div className="section-header" data-aos="fade-up">
-            <h2 className="section-title">Why Travelers Trust Perfect Planners</h2>
-            <p className="section-subtitle">Experience matters when you're exploring the unknown</p>
+            ))}
           </div>
-          <div className="grid grid-3">
-            <div className="feature-box" data-aos="fade-right">
-              <div className="feature-icon">✈️</div>
-              <h3>Best Price Guarantee</h3>
-              <p>Lowest prices with no hidden charges. We offer the best value for your money.</p>
-            </div>
-            <div className="feature-box" data-aos="fade-up">
-              <div className="feature-icon">🛡️</div>
-              <h3>100% Safe & Secure</h3>
-              <p>Verified hotels, transport, and expert guides to ensure your safety throughout.</p>
-            </div>
-            <div className="feature-box" data-aos="fade-left">
-              <div className="feature-icon">🌍</div>
-              <h3>Domestic & International</h3>
-              <p>From local hidden gems to global wonders, we cover it all from Tirunelveli.</p>
-            </div>
-            <div className="feature-box" data-aos="fade-right" data-aos-delay="200">
-              <div className="feature-icon">💳</div>
-              <h3>Easy EMI Options</h3>
-              <p>Don't let budget hold you back. Book now and pay in easy installments.</p>
-            </div>
-            <div className="feature-box" data-aos="fade-up" data-aos-delay="200">
-              <div className="feature-icon">📞</div>
-              <h3>24/7 Customer Support</h3>
-              <p>Always here when you need us. Round-the-clock assistance for peace of mind.</p>
-            </div>
-            <div className="feature-box" data-aos="fade-left" data-aos-delay="200">
-              <div className="feature-icon">🏅</div>
-              <h3>Expert Travel Planners</h3>
-              <p>Experienced team from Tirunelveli with deep knowledge of destinations.</p>
+        </section>
+
+        {/* 8. Quick Contact Banner */}
+        <section className="contact-banner">
+          <div className="container banner-inner" data-aos="flip-up">
+            <h2>Ready to Plan Your Dream Holiday?</h2>
+            <p>Contact us today and get a FREE customized itinerary starting from Tirunelveli!</p>
+            <div className="banner-btns">
+              <a href="tel:7339004469" className="btn btn-primary"><i className="fa-solid fa-phone"></i> Call Us Now — 7339004469</a>
+              <a href="https://wa.me/917339004469" className="btn btn-outline"><i className="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 5. Popular Destinations Section */}
-      <section className="section-padding container">
-        <div className="section-header" data-aos="fade-up">
-          <h2 className="section-title">🗺️ Popular Destinations</h2>
-          <p className="section-subtitle">Explore our most loved vacation spots across the globe</p>
-        </div>
-        <div className="destinations-grid">
-          {popularDestinations.map((dest, index) => (
-            <div className={`dest-card dest-card-${index}`} key={index} data-aos="zoom-in" data-aos-delay={index * 100}>
-              <img src={dest.image} alt={dest.name} />
-              <div className="dest-overlay">
-                <h3>{dest.name}</h3>
-                <p>{dest.tag}</p>
-                <NavLink to="/packages" className="explore-link">Explore <i className="fa-solid fa-arrow-right"></i></NavLink>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 6. How It Works Section */}
-      <section className="section-padding bg-sky pos-relative">
-        <div className="container">
-          <div className="section-header" data-aos="fade-up">
-            <h2 className="section-title">How It Works</h2>
-            <p className="section-subtitle">Your dream vacation is just 4 simple steps away</p>
-          </div>
-          <div className="steps-container">
-            <div className="step" data-aos="fade-up" data-aos-delay="100">
-              <div className="step-num">01</div>
-              <div className="step-icon">🔍</div>
-              <h3>Choose Your Destination</h3>
-              <p>Browse through our domestic and international packages.</p>
-            </div>
-            <div className="step" data-aos="fade-up" data-aos-delay="200">
-              <div className="step-num">02</div>
-              <div className="step-icon">📋</div>
-              <h3>Customize Your Package</h3>
-              <p>Talk to our experts to tailor your trip to your needs.</p>
-            </div>
-            <div className="step" data-aos="fade-up" data-aos-delay="300">
-              <div className="step-num">03</div>
-              <div className="step-icon">💰</div>
-              <h3>Book & Pay Securely</h3>
-              <p>Confirm your booking with easy and secure payment options.</p>
-            </div>
-            <div className="step" data-aos="fade-up" data-aos-delay="400">
-              <div className="step-num">04</div>
-              <div className="step-icon">✈️</div>
-              <h3>Enjoy Your Holiday</h3>
-              <p>Pack your bags and create memories that last forever!</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Testimonials Section */}
-      <section className="section-padding container">
-        <div className="section-header" data-aos="fade-up">
-          <h2 className="section-title">What Our Travelers Say ❤️</h2>
-          <p className="section-subtitle">Stories of happiness from across the world</p>
-        </div>
-        <div className="testimonials-track">
-          {[1, 2, 3].map((i) => (
-            <div className="review-card glass-card" key={i} data-aos="fade-up">
-              <div className="review-stars">⭐⭐⭐⭐⭐</div>
-              <p className="review-text">"Our trip to Andaman with Perfect Planners was absolutely flawless. From the airport pickup to the hotel stay, everything was perfectly organized. Highly recommended!"</p>
-              <div className="review-user">
-                <div className="user-avatar"><i className="fa-solid fa-user-astronaut"></i></div>
-                <div className="user-info">
-                  <h4>Rahul S.</h4>
-                  <span>Tirunelveli, TN</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 8. Quick Contact Banner */}
-      <section className="contact-banner">
-        <div className="container banner-inner" data-aos="flip-up">
-          <h2>Ready to Plan Your Dream Holiday?</h2>
-          <p>Contact us today and get a FREE customized itinerary starting from Tirunelveli!</p>
-          <div className="banner-btns">
-            <a href="tel:7339004469" className="btn btn-primary"><i className="fa-solid fa-phone"></i> Call Us Now — 7339004469</a>
-            <a href="https://wa.me/917339004469" className="btn btn-outline"><i className="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
-          </div>
-        </div>
-      </section>
-
-      <style>{`
+        <style>{`
         /* Hero Section */
         .hero {
           min-height: 100vh;
@@ -1028,7 +1035,8 @@ const Home = () => {
           }
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 };
 

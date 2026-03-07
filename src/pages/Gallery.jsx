@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Gallery = () => {
   const [filter, setFilter] = useState('All');
@@ -29,57 +30,62 @@ const Gallery = () => {
   const closeLightbox = () => setSelectedImage(null);
 
   return (
-    <div className="gallery-page">
-      <section className="page-hero">
-        <div className="container">
-          <h1 data-aos="fade-up">Our Travel Memories</h1>
-          <p className="breadcrumb">Home / Gallery</p>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>Travel Gallery | Our Trip Memories | Perfect Planners</title>
+        <meta name="description" content="View our collection of happy travel memories. Explore photos of our domestic & international group tours, school trips, and family vacations from Tirunelveli." />
+      </Helmet>
+      <div className="gallery-page">
+        <section className="page-hero">
+          <div className="container">
+            <h1 data-aos="fade-up">Our Travel Memories</h1>
+            <p className="breadcrumb">Home / Gallery</p>
+          </div>
+        </section>
 
-      <div className="gallery-section container section-padding">
-        <div className="filter-tabs" data-aos="fade-up">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              className={`filter-tab ${filter === cat ? 'active' : ''}`}
-              onClick={() => setFilter(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+        <div className="gallery-section container section-padding">
+          <div className="filter-tabs" data-aos="fade-up">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                className={`filter-tab ${filter === cat ? 'active' : ''}`}
+                onClick={() => setFilter(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
 
-        <div className="gallery-grid" data-aos="fade-up">
-          {filteredImages.map((img, index) => (
-            <div
-              className={`gallery-item-box ${index % 5 === 0 ? 'tall' : index % 7 === 0 ? 'wide' : ''}`}
-              key={img.id}
-              onClick={() => openLightbox(img)}
-            >
-              <div className="img-zoom">
-                <img src={img.src} alt={img.title} />
+          <div className="gallery-grid" data-aos="fade-up">
+            {filteredImages.map((img, index) => (
+              <div
+                className={`gallery-item-box ${index % 5 === 0 ? 'tall' : index % 7 === 0 ? 'wide' : ''}`}
+                key={img.id}
+                onClick={() => openLightbox(img)}
+              >
+                <div className="img-zoom">
+                  <img src={img.src} alt={img.title} />
+                </div>
+                <div className="gallery-item-overlay">
+                  <span>{img.title}</span>
+                  <i className="fa-solid fa-expand"></i>
+                </div>
               </div>
-              <div className="gallery-item-overlay">
-                <span>{img.title}</span>
-                <i className="fa-solid fa-expand"></i>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {selectedImage && (
-        <div className="lightbox-overlay" onClick={closeLightbox}>
-          <div className="lightbox-content" onClick={e => e.stopPropagation()} data-aos="zoom-in">
-            <button className="lightbox-close" onClick={closeLightbox}>&times;</button>
-            <img src={selectedImage.src} alt={selectedImage.title} />
-            <h3 className="lightbox-title">{selectedImage.title}</h3>
+            ))}
           </div>
         </div>
-      )}
 
-      <style>{`
+        {selectedImage && (
+          <div className="lightbox-overlay" onClick={closeLightbox}>
+            <div className="lightbox-content" onClick={e => e.stopPropagation()} data-aos="zoom-in">
+              <button className="lightbox-close" onClick={closeLightbox}>&times;</button>
+              <img src={selectedImage.src} alt={selectedImage.title} />
+              <h3 className="lightbox-title">{selectedImage.title}</h3>
+            </div>
+          </div>
+        )}
+
+        <style>{`
         .page-hero {
           height: 350px;
           background: linear-gradient(rgba(0,53,128,0.7), rgba(0,53,128,0.7)), url('/images/packages/hero_bg.png');
@@ -228,7 +234,8 @@ const Gallery = () => {
           }
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 };
 

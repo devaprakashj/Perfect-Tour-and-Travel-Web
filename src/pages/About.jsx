@@ -1,108 +1,114 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   return (
-    <div className="about-page">
-      <section className="page-hero">
-        <div className="container">
-          <h1 data-aos="fade-up">About Perfect Planners</h1>
-          <p className="breadcrumb">Home / About Us</p>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>About Us | Perfect Planners Tours & Travels Tirunelveli</title>
+        <meta name="description" content="Learn about Perfect Planners, the leading tour agency in Tirunelveli with 10+ years of expertise in creating memorable domestic and international holidays." />
+      </Helmet>
+      <div className="about-page">
+        <section className="page-hero">
+          <div className="container">
+            <h1 data-aos="fade-up">About Perfect Planners</h1>
+            <p className="breadcrumb">Home / About Us</p>
+          </div>
+        </section>
 
-      {/* Story Section */}
-      <section className="story-section container section-padding">
-        <div className="grid grid-2 items-center">
-          <div className="story-image" data-aos="fade-right">
-            <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1200" alt="Perfect Planners Team" />
-            <div className="experience-badge">
-              <span>10+</span>
-              <p>Years of Excellence</p>
+        {/* Story Section */}
+        <section className="story-section container section-padding">
+          <div className="grid grid-2 items-center">
+            <div className="story-image" data-aos="fade-right">
+              <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1200" alt="Perfect Planners Team" />
+              <div className="experience-badge">
+                <span>10+</span>
+                <p>Years of Excellence</p>
+              </div>
+            </div>
+            <div className="story-content" data-aos="fade-left">
+              <h2 className="section-title text-left">Our Incredible Journey</h2>
+              <p className="about-text">
+                Perfect Planners Tours and Travels is a trusted travel agency based in Tirunelveli, Tamil Nadu, dedicated to making every journey memorable, affordable, and hassle-free. We specialize in customized domestic and international tour packages, air ticket booking, money exchange, and attestation services.
+              </p>
+              <p className="about-text">
+                Our experienced team works tirelessly to ensure that every traveler gets the best experience within their budget. From the start, we've focused on quality service and customer satisfaction, which has made us one of South India's favorite travel planners.
+              </p>
+              <div className="vision-mission-row">
+                <div className="vm-box">
+                  <i className="fa-solid fa-bullseye"></i>
+                  <h3>Our Mission</h3>
+                  <p>To make quality travel accessible to every family in Tamil Nadu and beyond.</p>
+                </div>
+                <div className="vm-box">
+                  <i className="fa-solid fa-eye"></i>
+                  <h3>Our Vision</h3>
+                  <p>To become South India's most trusted and loved travel planning company.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="story-content" data-aos="fade-left">
-            <h2 className="section-title text-left">Our Incredible Journey</h2>
-            <p className="about-text">
-              Perfect Planners Tours and Travels is a trusted travel agency based in Tirunelveli, Tamil Nadu, dedicated to making every journey memorable, affordable, and hassle-free. We specialize in customized domestic and international tour packages, air ticket booking, money exchange, and attestation services.
-            </p>
-            <p className="about-text">
-              Our experienced team works tirelessly to ensure that every traveler gets the best experience within their budget. From the start, we've focused on quality service and customer satisfaction, which has made us one of South India's favorite travel planners.
-            </p>
-            <div className="vision-mission-row">
-              <div className="vm-box">
-                <i className="fa-solid fa-bullseye"></i>
-                <h3>Our Mission</h3>
-                <p>To make quality travel accessible to every family in Tamil Nadu and beyond.</p>
+        </section>
+
+        {/* Highlights Section */}
+        <section className="highlights section-padding bg-navy text-white">
+          <div className="container">
+            <div className="grid grid-4 text-center">
+              <div className="stat-card" data-aos="fade-up" data-aos-delay="100">
+                <i className="fa-solid fa-users"></i>
+                <div className="counter">500+</div>
+                <p>Happy Customers</p>
               </div>
-              <div className="vm-box">
-                <i className="fa-solid fa-eye"></i>
-                <h3>Our Vision</h3>
-                <p>To become South India's most trusted and loved travel planning company.</p>
+              <div className="stat-card" data-aos="fade-up" data-aos-delay="200">
+                <i className="fa-solid fa-earth-asia"></i>
+                <div className="counter">50+</div>
+                <p>Destinations</p>
+              </div>
+              <div className="stat-card" data-aos="fade-up" data-aos-delay="300">
+                <i className="fa-solid fa-thumbs-up"></i>
+                <div className="counter">100%</div>
+                <p>Satisfaction Rate</p>
+              </div>
+              <div className="stat-card" data-aos="fade-up" data-aos-delay="400">
+                <i className="fa-solid fa-award"></i>
+                <div className="counter">10+</div>
+                <p>Years Experience</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Highlights Section */}
-      <section className="highlights section-padding bg-navy text-white">
-        <div className="container">
-          <div className="grid grid-4 text-center">
-            <div className="stat-card" data-aos="fade-up" data-aos-delay="100">
-              <i className="fa-solid fa-users"></i>
-              <div className="counter">500+</div>
-              <p>Happy Customers</p>
-            </div>
-            <div className="stat-card" data-aos="fade-up" data-aos-delay="200">
-              <i className="fa-solid fa-earth-asia"></i>
-              <div className="counter">50+</div>
-              <p>Destinations</p>
-            </div>
-            <div className="stat-card" data-aos="fade-up" data-aos-delay="300">
-              <i className="fa-solid fa-thumbs-up"></i>
-              <div className="counter">100%</div>
-              <p>Satisfaction Rate</p>
-            </div>
-            <div className="stat-card" data-aos="fade-up" data-aos-delay="400">
-              <i className="fa-solid fa-award"></i>
-              <div className="counter">10+</div>
-              <p>Years Experience</p>
-            </div>
+        {/* Team Section */}
+        <section className="team-section container section-padding">
+          <div className="section-header" data-aos="fade-up">
+            <h2 className="section-title">Our Expert Team</h2>
+            <p className="section-subtitle">The passionate people behind your perfect journeys</p>
           </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="team-section container section-padding">
-        <div className="section-header" data-aos="fade-up">
-          <h2 className="section-title">Our Expert Team</h2>
-          <p className="section-subtitle">The passionate people behind your perfect journeys</p>
-        </div>
-        <div className="grid grid-3">
-          {[
-            { name: "S. NIJAMTHEEN", role: "Founder", image: "/images/team/founder.jpg", linkedin: "#" },
-            { name: "Devaprakash J", role: "Website Developer", icon: "fa-code", linkedin: "https://www.linkedin.com/in/devaprakashj/" },
-            { name: "Inas Husayn K", role: "Website Developer", icon: "fa-laptop-code", linkedin: "https://www.linkedin.com/in/inas-husayn/" }
-          ].map((member, i) => (
-            <div className="team-card glass-card text-center" key={i} data-aos="fade-up" data-aos-delay={i * 200}>
-              <div className="team-avatar">
-                {member.image ? (
-                  <img src={member.image} alt={member.name} className="avatar-img" />
-                ) : (
-                  <i className={`fa-solid ${member.icon}`}></i>
-                )}
+          <div className="grid grid-3">
+            {[
+              { name: "S. NIJAMTHEEN", role: "Founder", image: "/images/team/founder.jpg", linkedin: "#" },
+              { name: "Devaprakash J", role: "Website Developer", icon: "fa-code", linkedin: "https://www.linkedin.com/in/devaprakashj/" },
+              { name: "Inas Husayn K", role: "Website Developer", icon: "fa-laptop-code", linkedin: "https://www.linkedin.com/in/inas-husayn/" }
+            ].map((member, i) => (
+              <div className="team-card glass-card text-center" key={i} data-aos="fade-up" data-aos-delay={i * 200}>
+                <div className="team-avatar">
+                  {member.image ? (
+                    <img src={member.image} alt={member.name} className="avatar-img" />
+                  ) : (
+                    <i className={`fa-solid ${member.icon}`}></i>
+                  )}
+                </div>
+                <h3 className="team-name">{member.name}</h3>
+                <p className="team-role">{member.role}</p>
+                <div className="team-socials">
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a>
+                </div>
               </div>
-              <h3 className="team-name">{member.name}</h3>
-              <p className="team-role">{member.role}</p>
-              <div className="team-socials">
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
 
-      <style>{`
+        <style>{`
         .bg-navy { 
           background: var(--deep-navy); 
           color: white; 
@@ -285,7 +291,8 @@ const About = () => {
           }
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Packages = () => {
   const [filter, setFilter] = useState('All');
@@ -54,122 +55,127 @@ const Packages = () => {
   };
 
   return (
-    <div className="packages-page">
-      {/* Page Hero */}
-      <section className="page-hero">
-        <div className="container">
-          <h1 data-aos="fade-up">Our Tour Packages</h1>
-          <p className="breadcrumb">Home / Packages</p>
-        </div>
-      </section>
-
-      {/* Filter Tabs */}
-      <section className="filter-section container section-padding">
-        <div className="filter-tabs" data-aos="fade-up">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              className={`filter-tab ${filter === cat ? 'active' : ''}`}
-              onClick={() => setFilter(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Packages Grid */}
-        <div className="grid grid-3">
-          {filteredPackages.map((pkg) => (
-            <div className="package-card" key={pkg.id} data-aos="fade-up">
-              <div className="pkg-img img-zoom">
-                <img src={pkg.image} alt={pkg.title} />
-                <span className="pkg-badge">{pkg.badge}</span>
-              </div>
-              <div className="pkg-content">
-                <h3 className="pkg-title">{pkg.title}</h3>
-                <div className="pkg-info-row">
-                  <span><i className="fa-solid fa-clock"></i> {pkg.duration}</span>
-                </div>
-                <ul className="pkg-highlights-list">
-                  {pkg.highlights.map((h, i) => (
-                    <li key={i}><i className="fa-solid fa-check"></i> {h}</li>
-                  ))}
-                </ul>
-                <div className="pkg-footer">
-                  <div className="pkg-price">
-                    <span className="price-label">Starts from</span>
-                    <span className="price-val">{pkg.price}</span>
-                  </div>
-                  <div className="pkg-btns">
-                    <button className="btn btn-primary btn-sm" onClick={() => openModal(pkg)}>Enquire Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Enquiry Modal */}
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content glass-card" onClick={e => e.stopPropagation()} data-aos="zoom-in">
-            <button className="modal-close" onClick={closeModal}>&times;</button>
-            <h2 className="section-title">Enquiry Form</h2>
-            <p className="modal-sub">Interested in: <strong>{selectedPkg?.title}</strong></p>
-            <form className="enquiry-form" onSubmit={handleEnquirySubmit}>
-              <div className="form-grid">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  required
-                />
-                <input
-                  type="text"
-                  placeholder="Destination"
-                  value={selectedPkg?.title}
-                  readOnly
-                />
-                <input
-                  type="date"
-                  name="date"
-                  placeholder="Travel Date"
-                  value={formData.date}
-                  onChange={handleInputChange}
-                />
-                <input
-                  type="number"
-                  name="travelers"
-                  placeholder="No. of Travelers"
-                  value={formData.travelers}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <textarea
-                name="message"
-                placeholder="Your Message / Requirements"
-                rows="4"
-                value={formData.message}
-                onChange={handleInputChange}
-              ></textarea>
-              <button type="submit" className="btn btn-primary w-full">Send WhatsApp Enquiry 📲</button>
-            </form>
+    <>
+      <Helmet>
+        <title>Tour Packages | Andaman, Kerala, Thailand & more | Perfect Planners</title>
+        <meta name="description" content="Explore our domestic & international tour packages. From Tirunelveli to Andaman, Kerala, Thailand, and Dubai. Best pricing and custom itineraries." />
+      </Helmet>
+      <div className="packages-page">
+        {/* Page Hero */}
+        <section className="page-hero">
+          <div className="container">
+            <h1 data-aos="fade-up">Our Tour Packages</h1>
+            <p className="breadcrumb">Home / Packages</p>
           </div>
-        </div>
-      )}
+        </section>
 
-      <style>{`
+        {/* Filter Tabs */}
+        <section className="filter-section container section-padding">
+          <div className="filter-tabs" data-aos="fade-up">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                className={`filter-tab ${filter === cat ? 'active' : ''}`}
+                onClick={() => setFilter(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Packages Grid */}
+          <div className="grid grid-3">
+            {filteredPackages.map((pkg) => (
+              <div className="package-card" key={pkg.id} data-aos="fade-up">
+                <div className="pkg-img img-zoom">
+                  <img src={pkg.image} alt={pkg.title} />
+                  <span className="pkg-badge">{pkg.badge}</span>
+                </div>
+                <div className="pkg-content">
+                  <h3 className="pkg-title">{pkg.title}</h3>
+                  <div className="pkg-info-row">
+                    <span><i className="fa-solid fa-clock"></i> {pkg.duration}</span>
+                  </div>
+                  <ul className="pkg-highlights-list">
+                    {pkg.highlights.map((h, i) => (
+                      <li key={i}><i className="fa-solid fa-check"></i> {h}</li>
+                    ))}
+                  </ul>
+                  <div className="pkg-footer">
+                    <div className="pkg-price">
+                      <span className="price-label">Starts from</span>
+                      <span className="price-val">{pkg.price}</span>
+                    </div>
+                    <div className="pkg-btns">
+                      <button className="btn btn-primary btn-sm" onClick={() => openModal(pkg)}>Enquire Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Enquiry Modal */}
+        {isModalOpen && (
+          <div className="modal-overlay" onClick={closeModal}>
+            <div className="modal-content glass-card" onClick={e => e.stopPropagation()} data-aos="zoom-in">
+              <button className="modal-close" onClick={closeModal}>&times;</button>
+              <h2 className="section-title">Enquiry Form</h2>
+              <p className="modal-sub">Interested in: <strong>{selectedPkg?.title}</strong></p>
+              <form className="enquiry-form" onSubmit={handleEnquirySubmit}>
+                <div className="form-grid">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="text"
+                    placeholder="Destination"
+                    value={selectedPkg?.title}
+                    readOnly
+                  />
+                  <input
+                    type="date"
+                    name="date"
+                    placeholder="Travel Date"
+                    value={formData.date}
+                    onChange={handleInputChange}
+                  />
+                  <input
+                    type="number"
+                    name="travelers"
+                    placeholder="No. of Travelers"
+                    value={formData.travelers}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <textarea
+                  name="message"
+                  placeholder="Your Message / Requirements"
+                  rows="4"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                ></textarea>
+                <button type="submit" className="btn btn-primary w-full">Send WhatsApp Enquiry 📲</button>
+              </form>
+            </div>
+          </div>
+        )}
+
+        <style>{`
         .page-hero {
           height: 350px;
           background: linear-gradient(rgba(0,53,128,0.7), rgba(0,53,128,0.7)), url('/images/packages/hero_bg.png');
@@ -335,7 +341,8 @@ const Packages = () => {
           }
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 };
 
