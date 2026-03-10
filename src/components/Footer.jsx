@@ -22,7 +22,8 @@ const Footer = () => {
             <a href="#" className="social-icon"><i className="fa-brands fa-facebook-f"></i></a>
             <a href="#" className="social-icon"><i className="fa-brands fa-instagram"></i></a>
             <a href="#" className="social-icon"><i className="fa-brands fa-youtube"></i></a>
-            <a href="https://wa.me/917339004469" className="social-icon"><i className="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/devaprakashj/" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://wa.me/917339004469" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
 
@@ -82,9 +83,16 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
+      {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="container">
-          <p>© 2025 Perfect Planners Tours and Travels. All Rights Reserved. | Designed with ❤️ in Tirunelveli</p>
+          <p>© 2025 Perfect Planners Tours and Travels. All Rights Reserved.</p>
+          <p className="dev-credits">
+            Designed & Developed with ❤️ by
+            <a href="https://www.linkedin.com/in/devaprakashj/" target="_blank" rel="noopener noreferrer"> Deva Prakash </a>
+            &
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"> Subas </a>
+          </p>
         </div>
       </div>
 
@@ -187,11 +195,26 @@ const Footer = () => {
         }
 
         .footer-bottom {
-          padding: 25px 0;
-          border-top: 1px solid rgba(255,255,255,0.1);
+          padding: 30px 0;
+          border-top: 1px solid rgba(255,255,255,0.08);
           text-align: center;
           font-size: 0.85rem;
-          color: rgba(255,255,255,0.5);
+          color: rgba(255,255,255,0.4);
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .dev-credits a {
+          color: var(--accent-gold);
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
+
+        .dev-credits a:hover {
+          text-decoration: underline;
+          color: white;
         }
 
         @media (max-width: 992px) {
