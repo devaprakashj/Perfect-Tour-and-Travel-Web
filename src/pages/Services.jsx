@@ -43,7 +43,7 @@ const Services = () => {
         <title>Our Services | Flights, Money Exchange & Attestation | Perfect Planners</title>
         <meta name="description" content="One-stop travel solution in Tirunelveli. We offer international air ticket booking, RBI authorized money exchange, and professional certificate attestation services." />
         <meta name="keywords" content="Air Ticket Booking Tirunelveli, Money Exchange Agent, Certificate Attestation MEA, Apostille Services, Travel Insurance, Passport Services" />
-        <link rel="canonical" href="https://perfectplannerstours.com/services" />
+        <link rel="canonical" href="https://perfectplannerstours.vercel.app/services" />
       </Helmet>
       <div className="services-page">
         <section className="page-hero">

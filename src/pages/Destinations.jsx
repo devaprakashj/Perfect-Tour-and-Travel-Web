@@ -27,7 +27,7 @@ const Destinations = () => {
         <title>Top Travel Destinations | Andaman, Kerala, Thailand & Dubai</title>
         <meta name="description" content="Explore top travel destinations. Specialized in Andaman, Kerala, Thailand, Dubai, and Singapore tour planning. Best travel itineraries from Tirunelveli." />
         <meta name="keywords" content="Best Holiday Destinations, South India Tours, Thailand Vacation, Dubai City Tour, Kerala Backwaters, International Destinations" />
-        <link rel="canonical" href="https://perfectplannerstours.com/destinations" />
+        <link rel="canonical" href="https://perfectplannerstours.vercel.app/destinations" />
       </Helmet>
       <div className="destinations-page">
         <section className="page-hero">

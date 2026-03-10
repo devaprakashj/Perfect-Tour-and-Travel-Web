@@ -82,17 +82,19 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="container">
           <p>© 2025 Perfect Planners Tours and Travels. All Rights Reserved.</p>
-          <p className="dev-credits">
-            Designed & Developed with ❤️ by
-            <a href="https://www.linkedin.com/in/devaprakashj/" target="_blank" rel="noopener noreferrer"> Deva Prakash </a>
-            &
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"> Subas </a>
-          </p>
+          <div className="dev-credits-section">
+            <p className="dev-credits">
+              Website Developer:
+              <a href="https://www.linkedin.com/in/devaprakashj/" target="_blank" rel="noopener noreferrer"> Devaprakash J </a>
+            </p>
+            <p className="dev-credits">
+              Website Developer:
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"> Inas Husayn K </a>
+            </p>
+          </div>
         </div>
       </div>
 

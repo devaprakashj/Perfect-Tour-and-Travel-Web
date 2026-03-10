@@ -111,13 +111,13 @@ const Home = () => {
         <title>Perfect Planners Tours & Travels | Best Travel Agency in Tirunelveli</title>
         <meta name="description" content="Discover affordable domestic and international tour packages from Tirunelveli. Specialized in customize Andaman, Kerala, Thailand, and Dubai tours with Perfect Planners Tours & Travels." />
         <meta name="keywords" content="Perfect Planners Tours, Travel Agency Tirunelveli, Andaman Tour Packages, Kerala Tours, Thailand Trip from Tamil Nadu, Best Holiday Planner" />
-        <link rel="canonical" href="https://perfectplannerstours.com/" />
+        <link rel="canonical" href="https://perfectplannerstours.vercel.app/" />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="Perfect Planners Tours & Travels | Your Trusted Travel Partner" />
         <meta property="og:description" content="Planning a dream vacation? Get the best deals on domestic and international tour packages with Perfect Planners." />
-        <meta property="og:url" content="https://perfectplannerstours.com/" />
-        <meta property="og:image" content="https://perfectplannerstours.com/images/og-image.jpg" />
+        <meta property="og:url" content="https://perfectplannerstours.vercel.app/" />
+        <meta property="og:image" content="https://perfectplannerstours.vercel.app/images/og-image.jpg" />
       </Helmet>
       <div className="home-page">
         {/* 1. Hero Banner Section */}

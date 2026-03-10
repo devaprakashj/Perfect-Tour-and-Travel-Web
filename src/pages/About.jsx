@@ -8,7 +8,7 @@ const About = () => {
         <title>About Us | Perfect Planners Tours & Travels | 10+ Years Experience</title>
         <meta name="description" content="Discover the story of Perfect Planners Tours & Travels. A leading travel agency in Tirunelveli with 10+ years of expertise in crafting memorable holidays." />
         <meta name="keywords" content="About Perfect Planners, Travel Agency Journey, Tirunelveli Best Travel Planners, Domestic and international Holiday Experts" />
-        <link rel="canonical" href="https://perfectplannerstours.com/about" />
+        <link rel="canonical" href="https://perfectplannerstours.vercel.app/about" />
       </Helmet>
       <div className="about-page">
         <section className="page-hero">

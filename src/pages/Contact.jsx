@@ -45,7 +45,7 @@ const Contact = () => {
         <title>Contact Us | Perfect Planners Tours & Travels | Book Your Trip</title>
         <meta name="description" content="Get in touch with Perfect Planners Tours & Travels for custom tour planning and bookings. Visit our office in Tirunelveli or chat with us on WhatsApp." />
         <meta name="keywords" content="Contact Perfect Planners, Travel Agency Tirunelveli WhatsApp, Booking Enquiry, Tour Agent Phone number, Tirunelveli Office address" />
-        <link rel="canonical" href="https://perfectplannerstours.com/contact" />
+        <link rel="canonical" href="https://perfectplannerstours.vercel.app/contact" />
       </Helmet>
       <div className="contact-page">
         <section className="page-hero">

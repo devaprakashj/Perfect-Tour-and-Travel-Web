@@ -35,7 +35,7 @@ const Gallery = () => {
         <title>Travel Gallery | Our Trip Memories | Perfect Planners Tours & Travels</title>
         <meta name="description" content="Explore our travel gallery to see happy memories from our domestic and international tours. Real photos from Andaman, Kerala, Thailand excursions." />
         <meta name="keywords" content="Travel Photos, Tour Memories, Andaman Gallery, Kerala Trip Pictures, Group Tour Photos, Travel Agency Portfolio" />
-        <link rel="canonical" href="https://perfectplannerstours.com/gallery" />
+        <link rel="canonical" href="https://perfectplannerstours.vercel.app/gallery" />
       </Helmet>
       <div className="gallery-page">
         <section className="page-hero">
