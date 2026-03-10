@@ -573,31 +573,51 @@ const Home = () => {
         }
 
         .search-card {
-          padding: 25px 35px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 45px;
+          padding: 30px 40px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr) auto;
+          gap: 30px;
           align-items: flex-end;
           background: rgba(255, 255, 255, 0.98);
           backdrop-filter: blur(20px);
-          border-radius: 20px;
+          border-radius: 25px; /* Softer, premium roundness */
           border: 1px solid rgba(255, 255, 255, 0.5);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
           width: 100%;
         }
 
         .search-field {
-          flex: 1;
-          min-width: 180px;
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 10px;
+        }
+
+        .search-field select, .search-field input {
+          width: 100%;
+          height: 55px; /* Consistent height */
+          padding: 0 20px;
+          border: 1.5px solid #eee;
+          background: #fdfdfd;
+          border-radius: 15px;
+          outline: none;
+          transition: all 0.3s ease;
+          font-family: inherit;
+          color: var(--deep-navy);
+          font-weight: 500;
+        }
+
+        .search-field select:focus, .search-field input:focus {
+          border-color: var(--primary-blue);
+          background: white;
+          box-shadow: 0 5px 15px rgba(0,87,184,0.1);
         }
 
         .search-btn {
-          flex: 0 0 auto;
-          height: 52px;
-          padding: 0 35px;
+          height: 55px; /* Matches input height */
+          padding: 0 40px;
+          border-radius: 15px;
+          margin-bottom: 0px; /* Aligned with input fields */
+          white-space: nowrap;
         }
 
         @media (max-width: 768px) {
@@ -614,12 +634,15 @@ const Home = () => {
             overflow: hidden; /* Prevent internal elements from leaking */
           }
           .search-card {
+            display: flex;
             flex-direction: column;
             align-items: stretch;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            gap: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             width: 100%;
             margin: 0;
+            border-radius: 20px;
           }
           .search-field {
             width: 100%;
@@ -645,13 +668,6 @@ const Home = () => {
           color: var(--primary-blue);
         }
 
-        .search-field select, .search-field input {
-          padding: 15px;
-          border: 1px solid #ddd;
-          border-radius: 10px;
-          outline: none;
-          font-family: inherit;
-        }
 
         /* Package Cards Fixes */
         .package-card {
