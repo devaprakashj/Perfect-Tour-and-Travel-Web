@@ -32,8 +32,10 @@ const Gallery = () => {
   return (
     <>
       <Helmet>
-        <title>Travel Gallery | Our Trip Memories | Perfect Planners</title>
-        <meta name="description" content="View our collection of happy travel memories. Explore photos of our domestic & international group tours, school trips, and family vacations." />
+        <title>Travel Gallery | Our Trip Memories | Perfect Planners Tours & Travels</title>
+        <meta name="description" content="Explore our travel gallery to see happy memories from our domestic and international tours. Real photos from Andaman, Kerala, Thailand excursions." />
+        <meta name="keywords" content="Travel Photos, Tour Memories, Andaman Gallery, Kerala Trip Pictures, Group Tour Photos, Travel Agency Portfolio" />
+        <link rel="canonical" href="https://perfectplannerstours.com/gallery" />
       </Helmet>
       <div className="gallery-page">
         <section className="page-hero">

@@ -40,8 +40,10 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Our Services | Airticket, Money Exchange & Attestation | Perfect Planners</title>
-        <meta name="description" content="Beyond tours, we offer air ticket booking, money exchange, and certificate attestation services. Your one-stop shop for all international travel needs." />
+        <title>Our Services | Flights, Money Exchange & Attestation | Perfect Planners</title>
+        <meta name="description" content="One-stop travel solution in Tirunelveli. We offer international air ticket booking, RBI authorized money exchange, and professional certificate attestation services." />
+        <meta name="keywords" content="Air Ticket Booking Tirunelveli, Money Exchange Agent, Certificate Attestation MEA, Apostille Services, Travel Insurance, Passport Services" />
+        <link rel="canonical" href="https://perfectplannerstours.com/services" />
       </Helmet>
       <div className="services-page">
         <section className="page-hero">

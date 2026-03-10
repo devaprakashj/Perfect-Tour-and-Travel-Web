@@ -57,8 +57,10 @@ const Packages = () => {
   return (
     <>
       <Helmet>
-        <title>Tour Packages | Andaman, Kerala, Thailand & more | Perfect Planners</title>
-        <meta name="description" content="Explore our domestic & international tour packages. From Andaman, Kerala, Thailand, and Dubai. Best pricing and custom itineraries." />
+        <title>Tour Packages | Andaman, Kerala, Thailand & Dubai | Perfect Planners</title>
+        <meta name="description" content="Explore our domestic and international tour packages from Tirunelveli. Best deals for Andaman, Kerala, Thailand, and Dubai. Custom itineraries at affordable prices." />
+        <meta name="keywords" content="Budget Tour Packages, Luxury Holidays, Andaman Packages, Kerala Trip, International Holidays from India, Honeymoon Deals" />
+        <link rel="canonical" href="https://perfectplannerstours.com/packages" />
       </Helmet>
       <div className="packages-page">
         {/* Page Hero */}

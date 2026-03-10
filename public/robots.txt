@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# Sitemap link (Update with your actual domain when live)
+Sitemap: https://perfectplannerstours.com/sitemap.xml

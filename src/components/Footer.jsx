@@ -75,7 +75,7 @@ const Footer = () => {
             </li>
             <li>
               <i className="fa-solid fa-envelope"></i>
-              <a href="mailto:info@perfectplanners.com">info@perfectplanners.com</a>
+              <a href="mailto:nellainijam1980@gmail.com">nellainijam1980@gmail.com</a>
             </li>
           </ul>
         </div>

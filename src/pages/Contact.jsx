@@ -35,15 +35,17 @@ const Contact = () => {
   const contactOptions = [
     { icon: 'fa-location-dot', title: 'Visit Our Office', content: '635, Sivanthipatti Main Road, Thiyagarajanagar, Tirunelveli – 627011, Tamil Nadu, India' },
     { icon: 'fa-phone', title: 'Call Us Now', content: '+91 73390 04469 | 8122694469 | 9894104469' },
-    { icon: 'fa-envelope', title: 'Email Address', content: 'info@perfectplanners.com' },
+    { icon: 'fa-envelope', title: 'Email Address', content: 'nellainijam1980@gmail.com' },
     { icon: 'fa-clock', title: 'Business Hours', content: 'Mon–Sat: 9:00 AM – 7:00 PM | Sun: 10:00 AM – 4:00 PM' }
   ];
 
   return (
     <>
       <Helmet>
-        <title>Contact Us | Renting and Group Tours | Perfect Planners</title>
-        <meta name="description" content="Get in touch with Perfect Planners for custom tour planning. Visit our office or contact us for Andaman, Kerala, and International tour bookings." />
+        <title>Contact Us | Perfect Planners Tours & Travels | Book Your Trip</title>
+        <meta name="description" content="Get in touch with Perfect Planners Tours & Travels for custom tour planning and bookings. Visit our office in Tirunelveli or chat with us on WhatsApp." />
+        <meta name="keywords" content="Contact Perfect Planners, Travel Agency Tirunelveli WhatsApp, Booking Enquiry, Tour Agent Phone number, Tirunelveli Office address" />
+        <link rel="canonical" href="https://perfectplannerstours.com/contact" />
       </Helmet>
       <div className="contact-page">
         <section className="page-hero">
