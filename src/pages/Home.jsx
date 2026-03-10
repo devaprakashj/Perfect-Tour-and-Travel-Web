@@ -304,31 +304,29 @@ const Home = () => {
               <h2 className="section-title">How It Works</h2>
               <p className="section-subtitle">Your dream vacation is just 4 simple steps away</p>
             </div>
-            <div className="steps-container">
-              <div className="step" data-aos="fade-up" data-aos-delay="100">
-                <div className="step-num">01</div>
-                <div className="step-icon">🔍</div>
-                <h3>Choose Your Destination</h3>
-                <p>Browse through our domestic and international packages.</p>
-              </div>
-              <div className="step" data-aos="fade-up" data-aos-delay="200">
-                <div className="step-num">02</div>
-                <div className="step-icon">📋</div>
-                <h3>Customize Your Package</h3>
-                <p>Talk to our experts to tailor your trip to your needs.</p>
-              </div>
-              <div className="step" data-aos="fade-up" data-aos-delay="300">
-                <div className="step-num">03</div>
-                <div className="step-icon">💰</div>
-                <h3>Book & Pay Securely</h3>
-                <p>Confirm your booking with easy and secure payment options.</p>
-              </div>
-              <div className="step" data-aos="fade-up" data-aos-delay="400">
-                <div className="step-num">04</div>
-                <div className="step-icon">✈️</div>
-                <h3>Enjoy Your Holiday</h3>
-                <p>Pack your bags and create memories that last forever!</p>
-              </div>
+            <div className="journey-grid">
+              {[
+                { num: "01", icon: "🔍", title: "Choose Destination", desc: "Browse our handpicked domestic and international packages." },
+                { num: "02", icon: "📋", title: "Customize Trip", desc: "Talk to our experts to tailor the itinerary to your needs." },
+                { num: "03", icon: "💰", title: "Secure Booking", desc: "Confirm with easy payments and instant confirmation." },
+                { num: "04", icon: "✈️", title: "Start Journey", desc: "Pack your bags and fly to your dream destination!" }
+              ].map((step, i) => (
+                <React.Fragment key={i}>
+                  <div className="journey-item" data-aos="fade-up" data-aos-delay={i * 150}>
+                    <div className="journey-card">
+                      <div className="step-count">{step.num}</div>
+                      <div className="journey-icon">{step.icon}</div>
+                      <h3>{step.title}</h3>
+                      <p>{step.desc}</p>
+                    </div>
+                  </div>
+                  {i < 3 && (
+                    <div className="journey-arrow" data-aos="fade-in" data-aos-delay={i * 150 + 100}>
+                      <i className="fa-solid fa-plane-up"></i>
+                    </div>
+                  )}
+                </React.Fragment>
+              ))}
             </div>
           </div>
         </section>
@@ -860,54 +858,102 @@ const Home = () => {
           margin-top: 10px;
         }
 
-        /* Steps */
-        .steps-container {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 30px;
+        /* Steps Staggered Redesign */
+        /* Journey Grid Redesign */
+        .journey-grid {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
           margin-top: 60px;
           position: relative;
         }
 
-        .steps-container::before {
-          content: '';
-          position: absolute;
-          top: 80px;
-          left: 10%;
-          width: 80%;
-          height: 2px;
-          border-top: 2px dashed rgba(0,0,0,0.1);
-          z-index: 0;
+        .journey-item {
+          flex: 1;
+          min-width: 200px;
         }
 
-        .step {
+        .journey-card {
+          background: white;
+          padding: 40px 25px;
+          border-radius: 30px;
           text-align: center;
           position: relative;
-          z-index: 1;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          transition: all 0.4s ease;
+          border: 1px solid rgba(0,0,0,0.05);
+          height: 100%;
         }
 
-        .step-num {
+        .journey-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+          border-color: var(--accent-gold);
+        }
+
+        .step-count {
           position: absolute;
-          top: -30px;
+          top: -20px;
           left: 50%;
           transform: translateX(-50%);
-          font-size: 5rem;
-          font-weight: 900;
-          color: rgba(0,0,0,0.03);
-          line-height: 1;
-        }
-
-        .step-icon {
-          width: 100px;
-          height: 100px;
-          background: white;
+          background: var(--blue-gradient);
+          color: white;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 2.5rem;
-          margin: 0 auto 25px;
-          box-shadow: var(--shadow-md);
+          font-weight: 700;
+          font-size: 0.9rem;
+          box-shadow: 0 5px 15px rgba(0,51,102,0.3);
+        }
+
+        .journey-icon {
+          font-size: 3rem;
+          margin-bottom: 20px;
+          display: inline-block;
+          filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+        }
+
+        .journey-card h3 {
+          font-size: 1.2rem;
+          margin-bottom: 12px;
+          color: var(--deep-navy);
+        }
+
+        .journey-card p {
+          font-size: 0.9rem;
+          color: #666;
+          line-height: 1.5;
+        }
+
+        .journey-arrow {
+          color: var(--accent-gold);
+          font-size: 1.5rem;
+          opacity: 0.5;
+          animation: flight 3s infinite ease-in-out;
+        }
+
+        @keyframes flight {
+          0%, 100% { transform: translateX(0) translateY(0) rotate(45deg); }
+          50% { transform: translateX(10px) translateY(-5px) rotate(45deg); }
+        }
+
+        @media (max-width: 992px) {
+          .journey-grid {
+            flex-direction: column;
+            gap: 40px;
+          }
+          .journey-arrow {
+            transform: rotate(135deg);
+            animation: flight-down 2s infinite;
+          }
+          @keyframes flight-down {
+            0%, 100% { transform: translateY(0) rotate(135deg); }
+            50% { transform: translateY(10px) rotate(135deg); }
+          }
         }
 
         /* Testimonials */
