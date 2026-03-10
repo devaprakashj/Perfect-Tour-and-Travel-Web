@@ -20,8 +20,8 @@ const Footer = () => {
           </p>
           <div className="social-icons">
             <a href="#" className="social-icon"><i className="fa-brands fa-facebook-f"></i></a>
-            <a href="#" className="social-icon"><i className="fa-brands fa-instagram"></i></a>
-            <a href="#" className="social-icon"><i className="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/nijam_nellai?igsh=MW41a21vYjRubWltag==" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@perfectplanners_travel?si=fhdjA1bLcdfqD3LF" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fa-brands fa-youtube"></i></a>
             <a href="https://www.linkedin.com/in/devaprakashj/" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fa-brands fa-linkedin-in"></i></a>
             <a href="https://wa.me/917339004469" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fa-brands fa-whatsapp"></i></a>
           </div>
@@ -92,7 +92,7 @@ const Footer = () => {
             </p>
             <p className="dev-credits">
               Website Developer:
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"> Inas Husayn K </a>
+              <a href="https://www.linkedin.com/in/inas-husayn/" target="_blank" rel="noopener noreferrer"> Inas Husayn K </a>
             </p>
           </div>
         </div>
