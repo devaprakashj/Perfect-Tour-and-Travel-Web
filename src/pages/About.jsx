@@ -5,8 +5,8 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | Perfect Planners Tours & Travels Tirunelveli</title>
-        <meta name="description" content="Learn about Perfect Planners, the leading tour agency in Tirunelveli with 10+ years of expertise in creating memorable domestic and international holidays." />
+        <title>About Us | Perfect Planners Tours & Travels</title>
+        <meta name="description" content="Learn about Perfect Planners, the leading tour agency with 10+ years of expertise in creating memorable domestic and international holidays." />
       </Helmet>
       <div className="about-page">
         <section className="page-hero">
@@ -29,7 +29,7 @@ const About = () => {
             <div className="story-content" data-aos="fade-left">
               <h2 className="section-title text-left">Our Incredible Journey</h2>
               <p className="about-text">
-                Perfect Planners Tours and Travels is a trusted travel agency based in Tirunelveli, Tamil Nadu, dedicated to making every journey memorable, affordable, and hassle-free. We specialize in customized domestic and international tour packages, air ticket booking, money exchange, and attestation services.
+                Perfect Planners Tours and Travels is a trusted travel agency dedicated to making every journey memorable, affordable, and hassle-free. We specialize in customized domestic and international tour packages, air ticket booking, money exchange, and attestation services.
               </p>
               <p className="about-text">
                 Our experienced team works tirelessly to ensure that every traveler gets the best experience within their budget. From the start, we've focused on quality service and customer satisfaction, which has made us one of South India's favorite travel planners.

@@ -58,7 +58,7 @@ const Packages = () => {
     <>
       <Helmet>
         <title>Tour Packages | Andaman, Kerala, Thailand & more | Perfect Planners</title>
-        <meta name="description" content="Explore our domestic & international tour packages. From Tirunelveli to Andaman, Kerala, Thailand, and Dubai. Best pricing and custom itineraries." />
+        <meta name="description" content="Explore our domestic & international tour packages. From Andaman, Kerala, Thailand, and Dubai. Best pricing and custom itineraries." />
       </Helmet>
       <div className="packages-page">
         {/* Page Hero */}

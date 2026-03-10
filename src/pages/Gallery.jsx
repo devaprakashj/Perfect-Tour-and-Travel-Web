@@ -33,7 +33,7 @@ const Gallery = () => {
     <>
       <Helmet>
         <title>Travel Gallery | Our Trip Memories | Perfect Planners</title>
-        <meta name="description" content="View our collection of happy travel memories. Explore photos of our domestic & international group tours, school trips, and family vacations from Tirunelveli." />
+        <meta name="description" content="View our collection of happy travel memories. Explore photos of our domestic & international group tours, school trips, and family vacations." />
       </Helmet>
       <div className="gallery-page">
         <section className="page-hero">

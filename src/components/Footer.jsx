@@ -2,93 +2,93 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
-    return (
-        <footer className="footer section-padding-deep">
-            <div className="container footer-grid">
-                {/* Column 1 - Logo & About */}
-                <div className="footer-col about">
-                    <div className="logo-inner">
-                        <i className="fa-solid fa-plane-departure plane-icon"></i>
-                        <div className="logo-text">
-                            <span className="logo-main">Perfect Planners</span>
-                            <span className="logo-sub">Tours & Travels</span>
-                        </div>
-                    </div>
-                    <p className="footer-desc">
-                        Your trusted travel partner for domestic and international tours from Tirunelveli.
-                        We make every journey memorable, affordable, and hassle-free.
-                    </p>
-                    <div className="social-icons">
-                        <a href="#" className="social-icon"><i className="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" className="social-icon"><i className="fa-brands fa-instagram"></i></a>
-                        <a href="#" className="social-icon"><i className="fa-brands fa-youtube"></i></a>
-                        <a href="https://wa.me/917339004469" className="social-icon"><i className="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-
-                {/* Column 2 - Quick Links */}
-                <div className="footer-col">
-                    <h4 className="footer-title">Quick Links</h4>
-                    <ul className="footer-links">
-                        <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/packages">Tour Packages</NavLink></li>
-                        <li><NavLink to="/services">Our Services</NavLink></li>
-                        <li><NavLink to="/destinations">Destinations</NavLink></li>
-                        <li><NavLink to="/gallery">Gallery</NavLink></li>
-                        <li><NavLink to="/about">About Us</NavLink></li>
-                        <li><NavLink to="/contact">Contact</NavLink></li>
-                    </ul>
-                </div>
-
-                {/* Column 3 - Our Services */}
-                <div className="footer-col">
-                    <h4 className="footer-title">Our Services</h4>
-                    <ul className="footer-links">
-                        <li><NavLink to="/services">Tour Packages</NavLink></li>
-                        <li><NavLink to="/services">Air Ticket Booking</NavLink></li>
-                        <li><NavLink to="/services">Money Exchange</NavLink></li>
-                        <li><NavLink to="/services">Certificate Attestation</NavLink></li>
-                        <li><NavLink to="/services">Group Tours</NavLink></li>
-                        <li><NavLink to="/services">Honeymoon Packages</NavLink></li>
-                    </ul>
-                </div>
-
-                {/* Column 4 - Contact Info */}
-                <div className="footer-col">
-                    <h4 className="footer-title">Contact Info</h4>
-                    <ul className="contact-info">
-                        <li>
-                            <i className="fa-solid fa-location-dot"></i>
-                            <span>635, Sivanthipatti Main Road, Thiyagarajanagar, Tirunelveli – 627011</span>
-                        </li>
-                        <li>
-                            <i className="fa-solid fa-phone"></i>
-                            <a href="tel:7339004469">7339004469</a>
-                        </li>
-                        <li>
-                            <i className="fa-solid fa-phone"></i>
-                            <a href="tel:8122694469">8122694469</a>
-                        </li>
-                        <li>
-                            <i className="fa-solid fa-phone"></i>
-                            <a href="tel:9894104469">9894104469</a>
-                        </li>
-                        <li>
-                            <i className="fa-solid fa-envelope"></i>
-                            <a href="mailto:info@perfectplanners.com">info@perfectplanners.com</a>
-                        </li>
-                    </ul>
-                </div>
+  return (
+    <footer className="footer section-padding-deep">
+      <div className="container footer-grid">
+        {/* Column 1 - Logo & About */}
+        <div className="footer-col about">
+          <div className="logo-inner">
+            <i className="fa-solid fa-plane-departure plane-icon"></i>
+            <div className="logo-text">
+              <span className="logo-main">Perfect Planners</span>
+              <span className="logo-sub">Tours & Travels</span>
             </div>
+          </div>
+          <p className="footer-desc">
+            Your trusted travel partner for domestic and international tours.
+            We make every journey memorable, affordable, and hassle-free.
+          </p>
+          <div className="social-icons">
+            <a href="#" className="social-icon"><i className="fa-brands fa-facebook-f"></i></a>
+            <a href="#" className="social-icon"><i className="fa-brands fa-instagram"></i></a>
+            <a href="#" className="social-icon"><i className="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/917339004469" className="social-icon"><i className="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
 
-            {/* Bottom Bar */}
-            <div className="footer-bottom">
-                <div className="container">
-                    <p>© 2025 Perfect Planners Tours and Travels. All Rights Reserved. | Designed with ❤️ in Tirunelveli</p>
-                </div>
-            </div>
+        {/* Column 2 - Quick Links */}
+        <div className="footer-col">
+          <h4 className="footer-title">Quick Links</h4>
+          <ul className="footer-links">
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/packages">Tour Packages</NavLink></li>
+            <li><NavLink to="/services">Our Services</NavLink></li>
+            <li><NavLink to="/destinations">Destinations</NavLink></li>
+            <li><NavLink to="/gallery">Gallery</NavLink></li>
+            <li><NavLink to="/about">About Us</NavLink></li>
+            <li><NavLink to="/contact">Contact</NavLink></li>
+          </ul>
+        </div>
 
-            <style>{`
+        {/* Column 3 - Our Services */}
+        <div className="footer-col">
+          <h4 className="footer-title">Our Services</h4>
+          <ul className="footer-links">
+            <li><NavLink to="/services">Tour Packages</NavLink></li>
+            <li><NavLink to="/services">Air Ticket Booking</NavLink></li>
+            <li><NavLink to="/services">Money Exchange</NavLink></li>
+            <li><NavLink to="/services">Certificate Attestation</NavLink></li>
+            <li><NavLink to="/services">Group Tours</NavLink></li>
+            <li><NavLink to="/services">Honeymoon Packages</NavLink></li>
+          </ul>
+        </div>
+
+        {/* Column 4 - Contact Info */}
+        <div className="footer-col">
+          <h4 className="footer-title">Contact Info</h4>
+          <ul className="contact-info">
+            <li>
+              <i className="fa-solid fa-location-dot"></i>
+              <span>635, Sivanthipatti Main Road, Thiyagarajanagar, Tirunelveli – 627011</span>
+            </li>
+            <li>
+              <i className="fa-solid fa-phone"></i>
+              <a href="tel:7339004469">7339004469</a>
+            </li>
+            <li>
+              <i className="fa-solid fa-phone"></i>
+              <a href="tel:8122694469">8122694469</a>
+            </li>
+            <li>
+              <i className="fa-solid fa-phone"></i>
+              <a href="tel:9894104469">9894104469</a>
+            </li>
+            <li>
+              <i className="fa-solid fa-envelope"></i>
+              <a href="mailto:info@perfectplanners.com">info@perfectplanners.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="footer-bottom">
+        <div className="container">
+          <p>© 2025 Perfect Planners Tours and Travels. All Rights Reserved. | Designed with ❤️ in Tirunelveli</p>
+        </div>
+      </div>
+
+      <style>{`
         .footer {
           background: var(--deep-navy);
           color: white;
@@ -206,8 +206,8 @@ const Footer = () => {
           }
         }
       `}</style>
-        </footer>
-    );
+    </footer>
+  );
 };
 
 export default Footer;

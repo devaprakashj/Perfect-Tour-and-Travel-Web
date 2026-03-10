@@ -25,7 +25,7 @@ const Destinations = () => {
     <>
       <Helmet>
         <title>Top Travel Destinations | Andaman, Kerala, Thailand & more</title>
-        <meta name="description" content="Explore our top travel destinations from Tirunelveli. Specialized in Andaman, Kerala, Thailand, Dubai, and Singapore tour planning with expert guidance." />
+        <meta name="description" content="Explore our top travel destinations. Specialized in Andaman, Kerala, Thailand, Dubai, and Singapore tour planning with expert guidance." />
       </Helmet>
       <div className="destinations-page">
         <section className="page-hero">

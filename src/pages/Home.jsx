@@ -87,7 +87,7 @@ const Home = () => {
       image: "/images/packages/kodai.png",
       badge: "🏔️ Hill Station",
       duration: "2D/1N",
-      capacity: "From Tirunelveli",
+      capacity: "Available Now",
       highlights: "Kodai Lake • Bryant Park • Silver Cascade",
       price: "₹4,500",
       delay: "400"
@@ -108,8 +108,8 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Perfect Planners Tours & Travels | Best Travel Agency in Tirunelveli</title>
-        <meta name="description" content="Book affordable domestic and international tour packages from Tirunelveli. Specialized in Andaman, Kerala, Thailand, and Dubai tours with Perfect Planners." />
+        <title>Perfect Planners Tours & Travels | Best Travel Agency</title>
+        <meta name="description" content="Book affordable domestic and international tour packages. Specialized in Andaman, Kerala, Thailand, and Dubai tours with Perfect Planners." />
         <link rel="canonical" href="https://perfectplannerstours.com/" />
       </Helmet>
       <div className="home-page">
@@ -131,7 +131,7 @@ const Home = () => {
               Explore the World with <span>Perfect Planners</span>
             </h1>
             <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
-              Affordable Domestic & International Tour Packages from Tirunelveli
+              Affordable Domestic & International Tour Packages
             </p>
             <div className="hero-btns" data-aos="fade-up" data-aos-delay="600">
               <NavLink to="/packages" className="btn btn-primary">🗺️ Explore Packages</NavLink>
@@ -256,7 +256,7 @@ const Home = () => {
               <div className="feature-box" data-aos="fade-left">
                 <div className="feature-icon">🌍</div>
                 <h3>Domestic & International</h3>
-                <p>From local hidden gems to global wonders, we cover it all from Tirunelveli.</p>
+                <p>From local hidden gems to global wonders, we cover it all.</p>
               </div>
               <div className="feature-box" data-aos="fade-right" data-aos-delay="200">
                 <div className="feature-icon">💳</div>
@@ -271,7 +271,7 @@ const Home = () => {
               <div className="feature-box" data-aos="fade-left" data-aos-delay="200">
                 <div className="feature-icon">🏅</div>
                 <h3>Expert Travel Planners</h3>
-                <p>Experienced team from Tirunelveli with deep knowledge of destinations.</p>
+                <p>Experienced team with deep knowledge of destinations.</p>
               </div>
             </div>
           </div>
@@ -340,15 +340,20 @@ const Home = () => {
             <p className="section-subtitle">Stories of happiness from across the world</p>
           </div>
           <div className="testimonials-track">
-            {[1, 2, 3].map((i) => (
-              <div className="review-card glass-card" key={i} data-aos="fade-up">
+            {[
+              { name: "Rahul S.", place: "Chennai, TN", text: "Our trip to Andaman with Perfect Planners was absolutely flawless. From the airport pickup to the hotel stay, everything was perfectly organized.", icon: "👤" },
+              { name: "Priyadharshini M.", place: "Madurai, TN", text: "Amazing honeymoon trip to Kerala! The houseboat experience was a dream. The team took care of every small detail. Will definitely book again!", icon: "👩" },
+              { name: "Anish Kumar", place: "Bangalore, KA", text: "Booked a Dubai family tour. Exceptional service and very friendly guides. The desert safari was the highlight of our trip. Thank you!", icon: "👨" }
+            ].map((review, i) => (
+              <div className="review-card glass-card" key={i} data-aos="fade-up" data-aos-delay={i * 200}>
+                <div className="quote-mark">“</div>
                 <div className="review-stars">⭐⭐⭐⭐⭐</div>
-                <p className="review-text">"Our trip to Andaman with Perfect Planners was absolutely flawless. From the airport pickup to the hotel stay, everything was perfectly organized. Highly recommended!"</p>
+                <p className="review-text">"{review.text}"</p>
                 <div className="review-user">
-                  <div className="user-avatar"><i className="fa-solid fa-user-astronaut"></i></div>
+                  <div className="user-avatar">{review.icon}</div>
                   <div className="user-info">
-                    <h4>Rahul S.</h4>
-                    <span>Tirunelveli, TN</span>
+                    <h4>{review.name}</h4>
+                    <span>{review.place}</span>
                   </div>
                 </div>
               </div>
@@ -360,7 +365,7 @@ const Home = () => {
         <section className="contact-banner">
           <div className="container banner-inner" data-aos="flip-up">
             <h2>Ready to Plan Your Dream Holiday?</h2>
-            <p>Contact us today and get a FREE customized itinerary starting from Tirunelveli!</p>
+            <p>Contact us today and get a FREE customized itinerary!</p>
             <div className="banner-btns">
               <a href="tel:7339004469" className="btn btn-primary"><i className="fa-solid fa-phone"></i> Call Us Now — 7339004469</a>
               <a href="https://wa.me/917339004469" className="btn btn-outline"><i className="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
@@ -568,7 +573,7 @@ const Home = () => {
           padding: 25px 35px;
           display: flex;
           flex-wrap: wrap;
-          gap: 20px;
+          gap: 45px;
           align-items: flex-end;
           background: rgba(255, 255, 255, 0.98);
           backdrop-filter: blur(20px);
@@ -913,12 +918,33 @@ const Home = () => {
         }
 
         .review-card {
-          padding: 40px;
+          padding: 45px 35px;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          border: 1px solid rgba(255,255,255,0.7);
+          position: relative;
+        }
+
+        .review-card:hover {
+          transform: translateY(-12px);
+          box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+          border-color: var(--accent-gold);
+        }
+
+        .quote-mark {
+          position: absolute;
+          top: 20px;
+          right: 30px;
+          font-size: 4rem;
+          color: var(--light-sky);
+          font-family: 'Playfair Display', serif;
+          line-height: 1;
+          opacity: 0.5;
         }
 
         .review-stars {
           margin-bottom: 20px;
           letter-spacing: 2px;
+          font-size: 0.9rem;
         }
 
         .review-text {

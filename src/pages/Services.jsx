@@ -6,7 +6,7 @@ const Services = () => {
     {
       id: 1,
       name: "Tour Packages (Domestic & International)",
-      description: "We offer curated domestic and international tour packages that cater to every kind of traveler. From the serene backwaters of Kerala to the vibrant streets of Bangkok, our packages are designed for maximum comfort and an unforgettable experience. We also specialize in group tours from Tirunelveli with Tamil-speaking guides.",
+      description: "We offer curated domestic and international tour packages that cater to every kind of traveler. From the serene backwaters of Kerala to the vibrant streets of Bangkok, our packages are designed for maximum comfort and an unforgettable experience. We also specialize in group tours with Tamil-speaking guides.",
       icon: "🌍",
       image: "/images/services/tours.png",
       list: ["Customized Domestic Tours", "International Destinations", "Tamil-Speaking Guides", "Honeymoon Specials", "Family Group Tours"]
@@ -22,7 +22,7 @@ const Services = () => {
     {
       id: 3,
       name: "Money Exchange Services",
-      description: "Traveling abroad? Get competitive exchange rates for all major world currencies. We provide quick and secure money exchange services in Tirunelveli, ensuring you have the right currency before you fly. We deal with USD, EUR, SGD, THB, AED, and more.",
+      description: "Traveling abroad? Get competitive exchange rates for all major world currencies. We provide quick and secure money exchange services, ensuring you have the right currency before you fly. We deal with USD, EUR, SGD, THB, AED, and more.",
       icon: "💱",
       image: "/images/services/exchange.png",
       list: ["Competitive Exchange Rates", "Major Currencies Available", "Fast & Reliable Transaction", "RBI Authorized Full Fledged Money Changer", "Transparent Fees"]
@@ -41,7 +41,7 @@ const Services = () => {
     <>
       <Helmet>
         <title>Our Services | Airticket, Money Exchange & Attestation | Perfect Planners</title>
-        <meta name="description" content="Beyond tours, we offer air ticket booking, money exchange, and certificate attestation services in Tirunelveli. Your one-stop shop for all international travel needs." />
+        <meta name="description" content="Beyond tours, we offer air ticket booking, money exchange, and certificate attestation services. Your one-stop shop for all international travel needs." />
       </Helmet>
       <div className="services-page">
         <section className="page-hero">

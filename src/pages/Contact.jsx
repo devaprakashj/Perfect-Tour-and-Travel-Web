@@ -42,8 +42,8 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Renting and Group Tours | Perfect Planners Tirunelveli</title>
-        <meta name="description" content="Get in touch with Perfect Planners for custom tour planning. Visit our Tirunelveli office or contact us for Andaman, Kerala, and International tour bookings." />
+        <title>Contact Us | Renting and Group Tours | Perfect Planners</title>
+        <meta name="description" content="Get in touch with Perfect Planners for custom tour planning. Visit our office or contact us for Andaman, Kerala, and International tour bookings." />
       </Helmet>
       <div className="contact-page">
         <section className="page-hero">
