@@ -176,29 +176,6 @@ const Packages = () => {
         )}
 
         <style>{`
-        .page-hero {
-          height: 350px;
-          background: linear-gradient(rgba(0,53,128,0.7), rgba(0,53,128,0.7)), url('/images/packages/hero_bg.png');
-          background-size: cover;
-          background-position: center;
-          display: flex;
-          align-items: center;
-          text-align: center;
-          color: white;
-          padding-top: 80px;
-        }
-
-        .page-hero h1 {
-          color: white;
-          font-size: 3.5rem;
-          margin-bottom: 10px;
-        }
-
-        .breadcrumb {
-          color: var(--accent-gold);
-          font-weight: 500;
-          letter-spacing: 1px;
-        }
 
         .filter-tabs {
           display: flex;
@@ -334,10 +311,6 @@ const Packages = () => {
           .modal-sub {
             margin-top: -30px;
             font-size: 0.9rem;
-          }
-          .page-hero {
-            height: 300px;
-            padding-top: 100px;
           }
         }
       `}</style>

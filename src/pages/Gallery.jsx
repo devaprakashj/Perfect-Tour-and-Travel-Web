@@ -86,17 +86,6 @@ const Gallery = () => {
         )}
 
         <style>{`
-        .page-hero {
-          height: 350px;
-          background: linear-gradient(rgba(0,53,128,0.7), rgba(0,53,128,0.7)), url('/images/packages/hero_bg.png');
-          background-size: cover;
-          background-position: center;
-          display: flex;
-          align-items: center;
-          text-align: center;
-          color: white;
-          padding-top: 80px;
-        }
 
         .gallery-grid {
           display: grid;

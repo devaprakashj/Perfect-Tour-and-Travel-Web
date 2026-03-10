@@ -6,13 +6,13 @@ const Destinations = () => {
   const categories = ['All', 'South India', 'North India', 'International', 'Beach', 'Hill Station'];
 
   const allDestinations = [
-    { name: "Andaman", tag: "Tropical Island", category: "Beach", description: "Experience crystal clear waters, white sandy beaches, and thrilling water sports at India's favorite tropical paradise.", image: "https://images.unsplash.com/photo-1589136777351-fdc9c9c85f95?q=80&w=1200" },
-    { name: "Kerala", tag: "God's Own Country", category: "South India", description: "Explore serene backwaters, lush tea plantations, and beautiful coastlines in the heart of South India.", image: "https://images.unsplash.com/photo-1602216056096-3c40cc0c9944?q=80&w=1200" },
-    { name: "Thailand", tag: "Amazing Thailand", category: "International", description: "Discover exotic culture, stunning temples, and world-class street food in the Land of Smiles.", image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1200" },
-    { name: "Kodaikanal", tag: "Princess of Hill Stations", category: "South India", description: "Relax amidst misty hills, peaceful lakes, and pine forests in the queen of South India.", image: "https://images.unsplash.com/photo-1626245051648-73599d10a248?q=80&w=1200" },
-    { name: "Manali", tag: "Snowy Peaks", category: "North India", description: "Breathtaking views of the Himalayas and adventurous activities await you in this popular hill station.", image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200" },
-    { name: "Singapore", tag: "The Lion City", category: "International", description: "A perfect blend of technology, nature, and modern luxury for a futuristic city experience.", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=1200" },
-    { name: "Dubai", tag: "City of Gold", category: "International", description: "Unparalleled luxury, desert safaris, and some of the world's most iconic buildings.", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200" },
+    { name: "Andaman", tag: "Tropical Island", category: "Beach", description: "Experience crystal clear waters, white sandy beaches, and thrilling water sports at India's favorite tropical paradise.", image: "/images/destinations/andaman.png" },
+    { name: "Kerala", tag: "God's Own Country", category: "South India", description: "Explore serene backwaters, lush tea plantations, and beautiful coastlines in the heart of South India.", image: "/images/destinations/kerala.png" },
+    { name: "Thailand", tag: "Amazing Thailand", category: "International", description: "Discover exotic culture, stunning temples, and world-class street food in the Land of Smiles.", image: "/images/destinations/thailand.png" },
+    { name: "Kodaikanal", tag: "Princess of Hill Stations", category: "South India", description: "Relax amidst misty hills, peaceful lakes, and pine forests in the queen of South India.", image: "/images/destinations/kodai.png" },
+    { name: "Manali", tag: "Snowy Peaks", category: "North India", description: "Breathtaking views of the Himalayas and adventurous activities await you in this popular hill station.", image: "/images/destinations/manali.png" },
+    { name: "Singapore", tag: "The Lion City", category: "International", description: "A perfect blend of technology, nature, and modern luxury for a futuristic city experience.", image: "/images/destinations/singapore.png" },
+    { name: "Dubai", tag: "City of Gold", category: "International", description: "Unparalleled luxury, desert safaris, and some of the world's most iconic buildings.", image: "/images/destinations/dubai.png" },
     { name: "Bali", tag: "Island of the Gods", category: "International", description: "Stunning beaches, volcanic mountains, and spiritual culture make Bali a must-visit destination.", image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1200" },
     { name: "Kashmir", tag: "Heaven on Earth", category: "North India", description: "Experience the ultimate beauty of Dal Lake, snow-capped peaks, and warm Himalayan hospitality.", image: "https://images.unsplash.com/photo-1566833925222-3860bb632145?q=80&w=1200" }
   ];
@@ -162,9 +162,12 @@ const Destinations = () => {
 
         @media (max-width: 768px) {
           .dest-mag-card { height: 450px; }
-          .dest-mag-name { font-size: 2rem; }
-          .dest-mag-desc { font-size: 1rem; max-width: 100%; }
-           .dest-mag-overlay { padding: 30px; }
+          .dest-mag-name { font-size: 2.2rem; }
+          .dest-mag-desc { font-size: 0.95rem; max-width: 100%; }
+          .dest-mag-overlay { padding: 30px; }
+          .page-hero {
+            padding-top: 120px;
+          }
         }
       `}</style>
       </div>

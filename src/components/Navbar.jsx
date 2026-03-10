@@ -2,111 +2,111 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const location = useLocation();
-    const isHomePage = location.pathname === '/';
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    useEffect(() => {
-        if (mobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-    }, [mobileMenuOpen]);
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [mobileMenuOpen]);
 
-    const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
-    const closeMenu = () => setMobileMenuOpen(false);
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+  const closeMenu = () => setMobileMenuOpen(false);
 
-    const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'Packages', path: '/packages' },
-        { name: 'Services', path: '/services' },
-        { name: 'Destinations', path: '/destinations' },
-        { name: 'Gallery', path: '/gallery' },
-        { name: 'About', path: '/about' },
-        { name: 'Contact', path: '/contact' },
-    ];
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Packages', path: '/packages' },
+    { name: 'Services', path: '/services' },
+    { name: 'Destinations', path: '/destinations' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
+  ];
 
-    return (
-        <>
-            <nav className={`navbar ${(!isHomePage || scrolled) ? 'nav-scrolled' : ''}`}>
-                <div className="container nav-container">
-                    <NavLink to="/" className="logo" onClick={closeMenu}>
-                        <div className="logo-inner">
-                            <i className="fa-solid fa-plane-departure plane-icon"></i>
-                            <div className="logo-text">
-                                <span className="logo-main">Perfect Planners</span>
-                                <span className="logo-sub">Tours & Travels</span>
-                            </div>
-                        </div>
-                    </NavLink>
-
-                    <ul className="nav-links">
-                        {navLinks.map((link) => (
-                            <li key={link.path}>
-                                <NavLink
-                                    to={link.path}
-                                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
-                                >
-                                    {link.name}
-                                </NavLink>
-                            </li>
-                        ))}
-                    </ul>
-
-                    <div className="nav-cta">
-                        <a href="tel:7339004469" className="btn btn-primary cta-btn">
-                            <i className="fa-solid fa-phone"></i> Book Now
-                        </a>
-                        <button className="hamburger" onClick={toggleMobileMenu} aria-label="Toggle Menu">
-                            <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
-                        </button>
-                    </div>
-                </div>
-            </nav>
-
-            <div
-                className={`mobile-nav-overlay ${mobileMenuOpen ? 'active' : ''}`}
-                onClick={closeMenu}
-            />
-
-            <div className={`mobile-nav ${mobileMenuOpen ? 'mobile-nav-active' : ''}`}>
-                <div className="mobile-nav-header">
-                    <span className="menu-label">Menu</span>
-                    <button className="close-drawer" onClick={closeMenu}>
-                        <i className="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-                <ul className="mobile-nav-links">
-                    {navLinks.map((link) => (
-                        <li key={link.path}>
-                            <NavLink
-                                to={link.path}
-                                onClick={closeMenu}
-                                className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'}
-                            >
-                                {link.name}
-                            </NavLink>
-                        </li>
-                    ))}
-                    <li className="mobile-cta-row">
-                        <a href="tel:7339004469" className="btn btn-primary w-full">
-                            <i className="fa-solid fa-phone"></i> Call Now
-                        </a>
-                    </li>
-                </ul>
+  return (
+    <>
+      <nav className={`navbar ${(!isHomePage || scrolled) ? 'nav-scrolled' : ''}`}>
+        <div className="container nav-container">
+          <NavLink to="/" className="logo" onClick={closeMenu}>
+            <div className="logo-inner">
+              <i className="fa-solid fa-plane-departure plane-icon"></i>
+              <div className="logo-text">
+                <span className="logo-main">Perfect Planners</span>
+                <span className="logo-sub">Tours & Travels</span>
+              </div>
             </div>
+          </NavLink>
 
-            <style>{`
+          <ul className="nav-links">
+            {navLinks.map((link) => (
+              <li key={link.path}>
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                >
+                  {link.name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+
+          <div className="nav-cta">
+            <a href="tel:7339004469" className="btn btn-primary cta-btn">
+              <i className="fa-solid fa-phone"></i> Book Now
+            </a>
+            <button className="hamburger" onClick={toggleMobileMenu} aria-label="Toggle Menu">
+              <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        className={`mobile-nav-overlay ${mobileMenuOpen ? 'active' : ''}`}
+        onClick={closeMenu}
+      />
+
+      <div className={`mobile-nav ${mobileMenuOpen ? 'mobile-nav-active' : ''}`}>
+        <div className="mobile-nav-header">
+          <span className="menu-label">Menu</span>
+          <button className="close-drawer" onClick={closeMenu}>
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <ul className="mobile-nav-links">
+          {navLinks.map((link) => (
+            <li key={link.path}>
+              <NavLink
+                to={link.path}
+                onClick={closeMenu}
+                className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'}
+              >
+                {link.name}
+              </NavLink>
+            </li>
+          ))}
+          <li className="mobile-cta-row">
+            <a href="tel:7339004469" className="btn btn-primary w-full">
+              <i className="fa-solid fa-phone"></i> Call Now
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <style>{`
         .navbar {
           position: fixed;
           top: 0;
@@ -119,9 +119,10 @@ const Navbar = () => {
         }
 
         .nav-scrolled {
-          background: var(--deep-navy);
-          padding: 12px 0;
-          box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+          background: rgba(0, 53, 128, 0.95);
+          backdrop-filter: blur(10px);
+          padding: 10px 0;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
         .nav-container {
@@ -211,20 +212,24 @@ const Navbar = () => {
           position: fixed;
           top: 0;
           right: 0;
-          width: 80%;
+          width: 85%;
           height: 100vh;
           background: var(--deep-navy);
           z-index: 20000;
-          transform: translateX(100%);
-          transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-          padding: 80px 40px;
+          transform: translateX(101%);
+          transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.5s;
+          padding: 60px 30px;
           display: flex;
           flex-direction: column;
-          box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+          box-shadow: -15px 0 45px rgba(0,0,0,0.25);
+          visibility: hidden;
+          pointer-events: none;
         }
 
         .mobile-nav-active {
           transform: translateX(0);
+          visibility: visible;
+          pointer-events: auto;
         }
 
         .mobile-nav-header {
@@ -309,19 +314,29 @@ const Navbar = () => {
 
         @media (max-width: 480px) {
           .logo-main {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
           }
           .logo-sub {
-            font-size: 0.65rem;
-            letter-spacing: 1.5px;
+            font-size: 0.6rem;
+            letter-spacing: 1.2px;
           }
           .plane-icon {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
+          }
+          .nav-container {
+            padding: 0 10px;
+          }
+          .mobile-nav {
+            width: 90%;
+            padding: 40px 20px;
+          }
+          .hamburger {
+            font-size: 1.5rem;
           }
         }
       `}</style>
-        </>
-    );
+    </>
+  );
 };
 
 export default Navbar;

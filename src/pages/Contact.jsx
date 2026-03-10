@@ -186,8 +186,8 @@ const Contact = () => {
         {/* Map Section */}
         <section className="map-section section-padding-0">
           <iframe
-            title="Tirunelveli Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126485.45494918737!2d77.67107775571129!3d8.713913076136701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04115842813639%3A0x197478d1f27fa88d!2sTirunelveli%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1709772844893!5m2!1sen!2sin"
+            title="Perfect Planners Office Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252407.2226359512!2d77.5499540225802!3d8.704571571016562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b040dc01726cab3%3A0x1db81390802ecd2c!2sPERFECT%20PLANNERS%20TOURS%20AND%20TRAVELS.!5e0!3m2!1sen!2sin!4v1773112202568!5m2!1sen!2sin"
             width="100%"
             height="500"
             style={{ border: 0 }}
@@ -280,6 +280,15 @@ const Contact = () => {
           grid-template-columns: 1fr 1fr;
           gap: 20px;
           margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+          .contact-grid {
+            gap: 40px;
+          }
+          .contact-form-card {
+            padding: 30px 20px;
+          }
         }
 
         @media (max-width: 576px) {

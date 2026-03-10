@@ -80,17 +80,6 @@ const Services = () => {
         </div>
 
         <style>{`
-        .page-hero {
-          height: 350px;
-          background: linear-gradient(rgba(0,53,128,0.7), rgba(0,53,128,0.7)), url('/images/packages/hero_bg.png');
-          background-size: cover;
-          background-position: center;
-          display: flex;
-          align-items: center;
-          text-align: center;
-          color: white;
-          padding-top: 80px;
-        }
 
         .service-card {
           display: flex;
@@ -209,10 +198,6 @@ const Services = () => {
           }
           .service-desc {
             font-size: 1rem;
-          }
-          .page-hero {
-            height: 250px;
-            padding-top: 100px;
           }
         }
       `}</style>

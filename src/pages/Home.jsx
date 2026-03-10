@@ -445,11 +445,11 @@ const Home = () => {
             width: 100%;
           }
           .hero-title {
-            font-size: 2.4rem !important;
+            font-size: 2.2rem !important;
           }
           .hero-subtitle {
-            font-size: 1.1rem !important;
-            margin-bottom: 30px;
+            font-size: 1.05rem !important;
+            margin-bottom: 25px;
           }
         }
 
@@ -498,7 +498,8 @@ const Home = () => {
 
         @media (max-width: 768px) {
           .hero-btns {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            gap: 15px;
           }
         }
 
@@ -538,19 +539,23 @@ const Home = () => {
         @media (max-width: 480px) {
           .hero-btns {
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             width: 100%;
-            padding: 0 20px;
+            padding: 0 10px;
           }
           .hero-btns .btn {
             width: 100%;
             justify-content: center;
           }
           .hero-stats {
-            gap: 15px;
+            gap: 10px;
           }
           .stat-badge {
-            flex: 1 1 40%;
+            flex: 1 1 45%;
+            padding: 10px;
+          }
+          .stat-badge span {
+            font-size: 1.1rem;
           }
         }
 
@@ -1088,18 +1093,21 @@ const Home = () => {
 
         @media (max-width: 768px) {
           .hero-content {
-            padding-top: 80px;
+            padding-top: 60px;
           }
           .search-bar-container {
             position: relative;
             bottom: 0;
             transform: none;
             left: 0;
-            margin-top: -50px;
-            padding: 0 15px;
+            margin-top: -30px;
+            padding: 0 10px;
+            width: 100%;
           }
           .search-card {
             grid-template-columns: 1fr;
+            gap: 15px; /* Tighter gap on mobile */
+            padding: 20px;
           }
           .banner-btns {
             flex-direction: column;
