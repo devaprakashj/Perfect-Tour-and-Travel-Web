@@ -13,10 +13,10 @@ const Packages = () => {
     { id: 2, type: 'Nature', category: 'Domestic', image: '/images/packages/kerala.png', title: 'Kerala Backwaters Tour', duration: '3 Days 2 Nights', price: '₹8,000', badge: 'Best Seller', highlights: ['Alappuzha', 'Varkala', 'Trivandrum'] },
     { id: 3, type: 'Beach', category: 'International', image: '/images/packages/thailand.png', title: 'Thailand Tour Package', duration: '5 Days', price: '₹40,000', badge: 'Exotic', highlights: ['Bangkok', 'Pattaya', 'Phi Phi Islands'] },
     { id: 4, type: 'Hill Stations', category: 'Domestic', image: '/images/packages/kodai.png', title: 'Kodaikanal Weekend Tour', duration: '2 Days 1 Night', price: '₹4,500', badge: 'Quick Escape', highlights: ['Kodai Lake', 'Bryant Park', 'Coaker\'s Walk'] },
-    { id: 5, type: 'Hill Stations', category: 'Domestic', image: '/images/packages/ooty.png', title: 'Ooty Tour', duration: '1 Night 2 Days', price: '₹3,500', badge: 'Budget', highlights: ['Botanical Garden', 'Doddabetta Peak', 'Ooty Lake'] },
+    { id: 5, type: 'Hill Stations', category: 'Domestic', image: '/images/packages/ooty.png', title: 'Ooty Tour', duration: '1 Night 2 Days', price: '₹4,500', badge: 'Budget', highlights: ['Botanical Garden', 'Doddabetta Peak', 'Ooty Lake'] },
     { id: 6, type: 'Adventure', category: 'International', image: '/images/packages/singapore.png', title: 'Singapore Tour', duration: '6 Days 5 Nights', price: '₹65,000', badge: 'Luxury', highlights: ['Gardens by the Bay', 'Sentosa Island', 'Universal Studios'] },
-    { id: 7, type: 'Hill Stations', category: 'Domestic', image: '/images/packages/manali.png', title: 'Manali Tour', duration: '5 Nights 6 Days', price: '₹18,000', badge: 'Adventure', highlights: ['Rohtang Pass', 'Hadimba Temple', 'Solang Valley'] },
-    { id: 8, type: 'Luxury', category: 'International', image: '/images/packages/dubai.png', title: 'Dubai Tour', duration: '5 Days 4 Nights', price: '₹75,000', badge: 'Premium', highlights: ['Burj Khalifa', 'Desert Safari', 'Dubai Mall'] },
+    { id: 7, type: 'Hill Stations', category: 'Domestic', image: '/images/packages/manali.png', title: 'Manali Tour', duration: '5 Nights 6 Days', price: '₹35,000', badge: 'Adventure', highlights: ['Rohtang Pass', 'Hadimba Temple', 'Solang Valley'] },
+    { id: 8, type: 'Luxury', category: 'International', image: '/images/packages/dubai.png', title: 'Dubai Tour', duration: '5 Days 4 Nights', price: '₹40,000', badge: 'Premium', highlights: ['Burj Khalifa', 'Desert Safari', 'Dubai Mall'] },
   ];
 
   const filteredPackages = filter === 'All'
