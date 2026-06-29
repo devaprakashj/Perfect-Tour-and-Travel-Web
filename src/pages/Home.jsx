@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import TourPosterCarousel from '../components/TourPosterCarousel';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -242,7 +243,10 @@ const Home = () => {
           </div>
         </section>
 
-        {/* 4. Why Choose Us Section */}
+        {/* 4. Featured Tour Poster Carousel */}
+        <TourPosterCarousel />
+
+        {/* 5. Why Choose Us Section */}
         <section className="why-choose section-padding bg-white">
           <div className="container">
             <div className="section-header" data-aos="fade-up">
