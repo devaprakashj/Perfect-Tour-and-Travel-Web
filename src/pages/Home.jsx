@@ -350,6 +350,7 @@ const Home = () => {
           </div>
           <div className="testimonials-track">
             {[
+              { name: "Noor Mohamed", place: "Melapalayam, Tirunelveli", text: "The Kodaikanal trip organized by Perfect Planners was an exceptional experience. The meticulous planning ensured a seamless journey, with every detail thoughtfully managed. Mr. Nizamuddin maintained consistent communication from the outset to the conclusion of the trip. Perfect Planners comes highly recommended for both families and friends.", icon: "👤" },
               { name: "Rahul S.", place: "Chennai, TN", text: "Our trip to Andaman with Perfect Planners was absolutely flawless. From the airport pickup to the hotel stay, everything was perfectly organized.", icon: "👤" },
               { name: "Priyadharshini M.", place: "Madurai, TN", text: "Amazing honeymoon trip to Kerala! The houseboat experience was a dream. The team took care of every small detail. Will definitely book again!", icon: "👩" },
               { name: "Anish Kumar", place: "Bangalore, KA", text: "Booked a Dubai family tour. Exceptional service and very friendly guides. The desert safari was the highlight of our trip. Thank you!", icon: "👨" }
@@ -991,7 +992,7 @@ const Home = () => {
         /* Testimonials */
         .testimonials-track {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(4, 1fr);
           gap: 30px;
         }
 
@@ -1114,13 +1115,16 @@ const Home = () => {
             display: none;
           }
           .testimonials-track {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
           }
         }
 
         @media (max-width: 768px) {
           .hero-content {
             padding-top: 60px;
+          }
+          .testimonials-track {
+            grid-template-columns: 1fr;
           }
           .search-bar-container {
             position: relative;
